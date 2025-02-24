@@ -1,0 +1,246 @@
+/* Modern Premium Dark Theme Testimonials Section */
+
+:root {
+    --bg-dark: #141416;
+    --card-bg: #1a1a1c;
+    --gold: #d4af37;
+    --gold-glow: rgba(212, 175, 55, 0.15);
+    --gold-hover: #c5a028;
+    --text-primary: #ffffff;
+    --text-secondary: #888888;
+    --card-border: rgba(212, 175, 55, 0.12);
+    --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.testimonials-section {
+    background: var(--bg-dark);
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-glow), transparent);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
+}
+
+.section-title {
+    font-size: 3rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    background: linear-gradient(to right, var(--gold), var(--text-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, var(--gold-glow), transparent 70%);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial-card:hover::before {
+    opacity: 1;
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.student-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gold-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--gold);
+}
+
+.student-details {
+    flex: 1;
+}
+
+.student-name {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+.testimonial-content p {
+    color: var(--text-primary);
+    line-height: 1.8;
+    margin: 0;
+    font-size: 1rem;
+    position: relative;
+}
+
+
+/* Modal Styles */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 3rem;
+    width: 90%;
+    max-width: 600px;
+    margin: 2rem auto;
+    position: relative;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+/* Form Styles */
+
+.testimonial-form {
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem;
+    background: var(--bg-dark);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px var(--gold-glow);
+}
+
+.submit-btn {
+    background: var(--gold);
+    color: var(--bg-dark);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background: var(--gold-hover);
+    transform: translateY(-2px);
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .testimonials-section {
+        padding: 4rem 1rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    .modal-content {
+        padding: 2rem;
+        margin: 1rem;
+        width: auto;
+    }
+}

@@ -1,0 +1,329 @@
+/* src/styles/components/footer.css */
+
+
+/* Premium Footer System */
+
+:root {
+    /* Footer-specific variables */
+    --footer-wave-height: 120px;
+    --footer-padding: clamp(4rem, 8vw, 8rem);
+    --footer-bg: linear-gradient(180deg, #FFFFFF 0%, #F8F8F8 100%);
+    --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), 0 8px 16px rgba(212, 175, 55, 0.05);
+    --footer-transition: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    --achievement-gradient: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(255, 215, 0, 0.05) 100%);
+    --social-hover: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+}
+
+
+/* Footer Container */
+
+.footer {
+    position: relative;
+    padding-top: calc(var(--footer-wave-height) + var(--footer-padding));
+    margin-top: var(--footer-wave-height);
+    background: var(--footer-bg);
+    overflow: hidden;
+}
+
+
+/* Premium Wave Separator */
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--footer-wave-height);
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23ffffff'/%3E%3C/svg%3E") no-repeat;
+    background-size: cover;
+    transform-origin: center top;
+    animation: waveAnimation 20s linear infinite alternate;
+}
+
+
+/* Premium Container */
+
+.premium-container {
+    width: min(90%, 1400px);
+    margin: 0 auto;
+}
+
+
+/* Footer Grid */
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    position: relative;
+}
+
+
+/* Footer Brand Section */
+
+.footer-brand {
+    position: relative;
+}
+
+.footer-heading {
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    will-change: transform;
+    animation: headingFloat 6s ease-in-out infinite;
+}
+
+
+/* Premium Achievement Cards */
+
+.achievement-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.achievement-card {
+    background: var(--achievement-gradient);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: var(--footer-transition);
+    transform-origin: center;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.achievement-card h3 {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    font-weight: 800;
+    margin: 0;
+    animation: numberCount 2s ease-out;
+}
+
+
+/* Premium Social Links */
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: var(--card-shadow);
+    transition: var(--footer-transition);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--social-hover);
+    opacity: 0;
+    transition: var(--footer-transition);
+    z-index: -1;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+    color: #FFFFFF;
+}
+
+.social-link:hover::before {
+    opacity: 1;
+}
+
+
+/* Premium Contact Form */
+
+.quick-contact {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background: #F8F8F8;
+    transition: var(--footer-transition);
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-gold);
+    background: #FFFFFF;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
+
+
+/* Premium Button */
+
+.premium-button {
+    background: var(--gradient-gold);
+    color: #FFFFFF;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--footer-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: buttonShine 3s infinite;
+}
+
+
+/* Premium Animations */
+
+@keyframes waveAnimation {
+    0% {
+        transform: translateY(0) scaleY(1);
+    }
+    50% {
+        transform: translateY(-2%) scaleY(1.02);
+    }
+    100% {
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+@keyframes headingFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes numberCount {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes buttonShine {
+    0% {
+        left: -100%;
+    }
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .achievement-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .achievement-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .achievement-cards {
+        grid-template-columns: 1fr;
+    }
+    .social-links {
+        justify-content: center;
+    }
+}
+
+
+/* Print Styles */
+
+@media print {
+    .footer {
+        background: none;
+        padding-top: 2rem;
+    }
+    .footer::before {
+        display: none;
+    }
+    .social-links,
+    .contact-form {
+        display: none;
+    }
+}
+
+
+/* Dark Mode Support */
+
+@media (prefers-color-scheme: dark) {
+    .footer {
+        background: linear-gradient(180deg, #1a1a1a 0%, #121212 100%);
+    }
+    .quick-contact {
+        background: #1a1a1a;
+    }
+    .achievement-card {
+        background: rgba(212, 175, 55, 0.05);
+    }
+    .contact-form input,
+    .contact-form textarea {
+        background: #2a2a2a;
+        color: #FFFFFF;
+    }
+}

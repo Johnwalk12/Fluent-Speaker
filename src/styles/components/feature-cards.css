@@ -1,0 +1,117 @@
+/* Modern Premium Feature Cards System */
+
+:root {
+    --card-bg: #141416;
+    --card-border: rgba(212, 175, 55, 0.12);
+    --gold-primary: #d4af37;
+    --gold-secondary: rgba(212, 175, 55, 0.15);
+    --text-primary: #ffffff;
+    --text-secondary: #888888;
+    --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, var(--gold-secondary), transparent);
+    opacity: 0;
+    transition: var(--transition-smooth);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.card-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--gold-secondary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 2rem;
+    transition: var(--transition-smooth);
+}
+
+.feature-card:hover .card-icon {
+    background: var(--gold-primary);
+    transform: scale(1.1);
+}
+
+.card-title {
+    color: var(--gold-primary);
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.feature-item {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    padding-left: 1.75rem;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.feature-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--gold-primary);
+    border-radius: 50%;
+}
+
+.feature-item:hover {
+    color: var(--text-primary);
+    transform: translateX(8px);
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    .feature-card {
+        padding: 2rem;
+    }
+}

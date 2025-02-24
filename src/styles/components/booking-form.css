@@ -1,0 +1,289 @@
+/* booking-form.css */
+
+
+/* Premium Booking Form Styles - $10,000 Quality Standard */
+
+
+/* Custom Properties & Design Tokens */
+
+:root {
+    /* Color System */
+    --color-primary: #DAA520;
+    --color-primary-light: #F4D03F;
+    --color-primary-dark: #B8860B;
+    --color-secondary: #2C3E50;
+    --color-success: #2ECC71;
+    --color-warning: #F1C40F;
+    --color-danger: #E74C3C;
+    --color-background: #F5F5F5;
+    --color-text: #333333;
+    --color-text-light: #666666;
+    --color-white: #FFFFFF;
+    /* Enhanced Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary) 50%, var(--color-primary-light));
+    --gradient-hover: linear-gradient(135deg, var(--color-primary-light), var(--color-primary) 50%, var(--color-primary-dark));
+    --gradient-success: linear-gradient(135deg, #27AE60, #2ECC71);
+    /* Enhanced Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+    --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Enhanced Animations */
+    --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    /* Spacing System */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+}
+
+
+/* Premium Container Styles */
+
+.booking-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s var(--transition-base) forwards;
+}
+
+.booking-form {
+    background: var(--color-white);
+    border-radius: 20px;
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.booking-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+}
+
+
+/* Enhanced Session Options */
+
+.session-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.session-option {
+    padding: var(--spacing-lg);
+    border: 2px solid transparent;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    background: var(--color-white);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.session-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    z-index: 1;
+}
+
+.session-option:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.session-option.active {
+    border-color: var(--color-primary);
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    transform: translateY(-4px);
+}
+
+.session-option.active::before {
+    opacity: 0.1;
+}
+
+
+/* Enhanced Duration Options */
+
+.duration-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.duration-option {
+    padding: var(--spacing-md);
+    border: 2px solid var(--color-primary);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-align: center;
+    background: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.duration-option:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.duration-option.active {
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    border-color: transparent;
+}
+
+
+/* Enhanced Form Inputs */
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    color: var(--color-text);
+    transition: color var(--transition-base);
+}
+
+.form-control {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all var(--transition-base);
+    background: var(--color-white);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(218, 165, 32, 0.1);
+}
+
+
+/* Submit Button Enhancement */
+
+.submit-btn {
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    padding: var(--spacing-md) var(--spacing-xl);
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: var(--transition-slow);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+
+/* Premium Animations */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+
+/* Enhanced Responsive Design */
+
+@media (max-width: 768px) {
+    .booking-container {
+        padding: var(--spacing-sm);
+    }
+    .booking-form {
+        padding: var(--spacing-lg);
+    }
+    .duration-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .session-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .duration-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Print Styles */
+
+@media print {
+    .booking-form {
+        box-shadow: none;
+    }
+    .submit-btn {
+        display: none;
+    }
+}
