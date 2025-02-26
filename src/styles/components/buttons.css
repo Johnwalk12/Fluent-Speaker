@@ -113,6 +113,14 @@
 }
 
 
+/* Action butten*/
+
+.action-btn {
+    @extend .btn,
+    .btn--primary;
+}
+
+
 /* Outline Button */
 
 .btn--outline {

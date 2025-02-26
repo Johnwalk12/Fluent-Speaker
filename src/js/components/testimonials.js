@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
             showLessBtn: document.getElementById('showLessBtn'),
             closeBtn: document.querySelector('.close-btn'),
             form: document.querySelector('.testimonial-form'),
+            name: document.getElementById('name'),
+            email: document.getElementById('email'),
+            testimonial: document.getElementById('testimonial'),
+            rating: document.getElementById('rating'),
             submitBtn: document.querySelector('.submit-btn'),
             testimonialCards: document.querySelectorAll('.testimonial-card')
         },
@@ -73,6 +77,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
             try {
                 const formData = new FormData(this.elements.form);
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const experience = formData.get('testimonial');
+                const rating = formData.get('rating');
+
+                // Update the form fields with the user's input
+                this.elements.name.value = name;
+                this.elements.email.value = email;
+                this.elements.testimonial.value = experience;
+                this.elements.rating.value = rating;
+
                 const response = await fetch('https://formsubmit.co/johnwalker199777@gmail.com', {
                     method: 'POST',
                     body: formData
@@ -89,20 +104,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.showErrorMessage();
             } finally {
                 this.state.isSubmitting = false;
-                this.elements.submitBtn.classList.remove('loading');
+                this.elemen - ts.submitBtn.classList.remove('loading');
             }
         },
 
         showSuccessMessage() {
-            // Implementation of success message display
+            // Display a success message to the user
+            console.log('Form submitted successfully!');
         },
 
         showErrorMessage() {
-            // Implementation of error message display
+            // Display an error message to the user
+            console.error('Error submitting the form.');
         },
 
         openModal() {
             this.elements.modal.classList.add('active');
+            this.elements.modal.style.maxWidth = '80%'; // Adjust the modal size
         },
 
         closeModal() {
@@ -110,15 +128,63 @@ document.addEventListener('DOMContentLoaded', function() {
         },
 
         showMoreTestimonials() {
-            // Implementation of show more functionality
+            const visibleCount = this.state.visibleCount;
+            const totalCards = this.elements.testimonialCards.length;
+
+            // Show the next set of testimonial cards
+            for (let i = visibleCount; i < visibleCount + this.config.loadMoreIncrement; i++) {
+                if (i < totalCards) {
+                    this.elements.testimonialCards[i].classList.remove('hidden');
+                } else {
+                    break;
+                }
+            }
+
+            this.state.visibleCount += this.config.loadMoreIncrement;
+
+            // Show the "Show Less" button if there are more cards to show
+            if (this.state.visibleCount < totalCards) {
+                this.elements.showLessBtn.style.display = 'inline-block';
+            } else {
+                this.elements.showLessBtn.style.display = 'none';
+            }
+
+            // Hide the "Show More" button if all cards are visible
+            if (this.state.visibleCount >= totalCards) {
+                this.elements.showMoreBtn.style.display = 'none';
+            }
         },
 
         showLessTestimonials() {
-            // Implementation of show less functionality
+            const visibleCount = this.state.visibleCount;
+            const totalCards = this.elements.testimonialCards.length;
+
+            // Hide the last set of testimonial cards
+            for (let i = visibleCount - 1; i >= this.config.initialVisibleCount; i--) {
+                this.elements.testimonialCards[i].classList.add('hidden');
+            }
+
+            this.state.visibleCount = this.config.initialVisibleCount;
+
+            // Show the "Show More" button
+            this.elements.showMoreBtn.style.display = 'inline-block';
+
+            // Hide the "Show Less" button if only the initial cards are visible
+            if (this.state.visibleCount === this.config.initialVisibleCount) {
+                this.elements.showLessBtn.style.display = 'none';
+            }
         },
 
         initializeTestimonials() {
-            // Initial setup of testimonials display
+            this.state.visibleCount = this.config.initialVisibleCount;
+
+            this.elements.testimonialCards.forEach((card, index) => {
+                if (index < this.config.initialVisibleCount) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
         }
     };
 
