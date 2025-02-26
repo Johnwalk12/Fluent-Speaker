@@ -1,34 +1,21 @@
-/* Adjust the main content area to fill the available space */
+/* Ensure the main content area fills the available space */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 .main-content {
     flex-grow: 1;
-    width: 100%;
-    max-width: 100%;
-}
-
-
-/* Remove any unnecessary padding or margins */
-
-.main-content,
-.footer {
-    padding: 0;
-    margin: 0;
-}
-
-
-/* Adjust the footer positioning */
-
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-
-/* Remove extra space below the footer */
-
-body {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+
+/* Position the footer at the bottom */
+
+.footer {
+    margin-top: auto;
 }
