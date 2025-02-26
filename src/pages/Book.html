@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your English Session</title>
+
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone.min.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Johnwalk12/Fluent-Speaker@latest/src/styles/main.css">
+</head>
+
+<body>
+    <div class="booking-container">
+        <form class="booking-form" id="bookingForm" action="https://formsubmit.co/johnwalker199777@gmail.com" method="POST" enctype="multipart/form-data">
+            <!-- FormSubmit configuration fields -->
+            <input type="hidden" name="_subject" value="New English Session Booking">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://myspeakcoach.com/thank-you">
+            <input type="hidden" name="_cc" value="davidsmith1995d@gmail.com">
+            <input type="hidden" name="_replyto" value="%email%">
+            <input type="hidden" name="_autoresponse" value="Thank you for booking! We will confirm your session within 2 hours after verifying your payment.">
+
+            <!-- Booking Details Hidden Fields -->
+            <input type="hidden" name="booking_details" id="booking_details">
+            <input type="hidden" name="selected_session_type" id="selected_session_type">
+            <input type="hidden" name="selected_duration" id="selected_duration">
+            <input type="hidden" name="session_name" id="session_name">
+            <input type="hidden" name="base_price" id="base_price">
+            <input type="hidden" name="discount_percentage" id="discount_percentage">
+            <input type="hidden" name="discount_amount" id="discount_amount">
+            <input type="hidden" name="final_price" id="final_price">
+            <input type="hidden" name="session_times" id="session_times">
+            <input type="hidden" name="selected_sessions" id="selected_sessions">
+            <input type="hidden" name="total_price" id="total_price">
+            <input type="hidden" name="payment_amount" id="payment_amount">
+            <input type="hidden" name="session_details" id="session_details">
+
+            <h1>Book Your English Session</h1>
+
+            <!-- Session Type Selection -->
+            <div class="form-group">
+                <label class="form-label">Session Type</label>
+                <div class="session-options">
+                    <div class="session-option active" data-type="One-on-One">
+                        <h3>One-on-One Session</h3>
+                        <p>Personalized attention & feedback</p>
+                    </div>
+                    <div class="session-option disabled" data-type="Group">
+                        <h3>Group Session</h3>
+                        <p>Coming Soon!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Duration Selection -->
+            <div class="duration-options">
+                <div class="duration-option" data-duration="30" data-trial="true" data-price="10">
+                    <h3>Trial Session</h3>
+                    <p>30 Minutes</p>
+                    <p>$10</p>
+                </div>
+                <div class="duration-option" data-duration="30" data-price="15">
+                    <h3>Power Boost</h3>
+                    <p>30 Minutes</p>
+                    <p>$15</p>
+                </div>
+                <div class="duration-option" data-duration="45" data-price="20">
+                    <h3>Standard Session</h3>
+                    <p>45 Minutes</p>
+                    <p>$20</p>
+                </div>
+                <div class="duration-option" data-duration="60" data-price="25">
+                    <h3>Deep Dive Addition</h3>
+                    <p>60 Minutes</p>
+                    <p>$25</p>
+                </div>
+            </div>
+
+            <!-- Session Quantity -->
+            <div class="form-group">
+                <label class="form-label">Number of Sessions</label>
+                <select name="number_of_sessions" id="sessionCount">
+                    <option value="1">1 session</option>
+                    <option value="4">4 sessions (10% off)</option>
+                    <option value="8">8 sessions (20% off)</option>
+                    <option value="12">12 sessions (30% off)</option>
+                </select>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="form-group">
+                <label class="form-label">Your Email</label>
+                <input type="email" name="email" required placeholder="Enter your email">
+            </div>
+
+            <!-- Additional Information -->
+            <div class="form-group">
+                <label class="form-label">Learning Goals & Challenges (Optional)</label>
+                <textarea name="message" rows="4" placeholder="Share your English learning goals and any specific areas you'd like to focus on"></textarea>
+            </div>
+
+            <!-- Payment Section -->
+            <div class="payment-section">
+                <h4>Purchase Summary</h4>
+                <div id="purchaseSummary"></div>
+                <div class="wallet-info">
+                    <h5>Payment Instructions</h5>
+                    <div class="wallet-address">
+                        <span>TRC20 Address:</span>
+                        <button type="button" class="copy-btn" onclick="copyAddress()">Copy</button>
+                    </div>
+                    <p>Send the total amount shown above to the TRC20 address. Upload your payment proof below.</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Payment Proof (Required)</label>
+                <input type="file" id="payment_proof" name="attachment" accept="image/*,.pdf" required>
+                <small>Accepted formats: PNG, JPG, PDF</small>
+            </div>
+
+            <button type="submit" class="submit-btn">Complete Booking</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/Johnwalk12/Fluent-Speaker@latest/src/js/components/Book.js" defer></script>
+</body>
+
+</html>
