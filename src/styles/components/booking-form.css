@@ -1,210 +1,318 @@
-    /* CSS/styles.css */
+/* Reset and Base Styles */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-:root {
-    --primary-color: #DAA520;
-    --secondary-color: #2C3E50;
-    --accent-color: #E67E22;
-    --background-color: #F5F5F5;
-    --text-color: #333333;
-    --white-color: #FFFFFF;
-    --dark-heading-color: #1a1a1a;
-    --primary-light-color: #F4D03F;
-    --primary-dark-color: #B8860B;
-    --gradient-gold: linear-gradient(135deg, var(--primary-dark-color), var(--primary-color), var(--primary-light-color));
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 4rem;
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ :root {
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary-color: #64748b;
+    --success-color: #22c55e;
+    --background-color: #f8fafc;
+    --card-background: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
+    color: var(--text-primary);
     background-color: var(--background-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 2rem;
 }
 
-.booking-container {
-    max-width: 800px;
+.container {
+    max-width: 1200px;
     margin: 0 auto;
-    background-color: var(--white-color);
-    border-radius: 15px;
-    padding: var(--spacing-xl);
+    padding: 0 1.5rem;
+}
+
+
+/* Header Styles */
+
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.header .subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+
+/* Main Content */
+
+.main {
+    padding: 4rem 0;
+}
+
+
+/* Security Badge */
+
+.security-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+    font-size: 0.875rem;
+}
+
+
+/* Pricing Grid */
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+
+/* Pricing Cards */
+
+.pricing-card {
+    background: var(--card-background);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
 
-h1 {
-    font-size: 2.5rem;
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: var(--spacing-lg);
+.pricing-card.featured {
+    border: 2px solid var(--primary-color);
+}
+
+.card-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
     text-align: center;
 }
 
-.form-group {
-    margin-bottom: var(--spacing-lg);
+.featured .card-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
 }
 
-.form-label {
-    display: block;
-    margin-bottom: var(--spacing-sm);
+.card-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.duration {
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+
+/* Features List */
+
+.features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.features li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.features i {
+    color: var(--success-color);
+}
+
+
+/* Price Container */
+
+.price-container {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.per-session {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+
+/* Badges */
+
+.popular-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--success-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
     font-weight: 500;
-    color: var(--dark-heading-color);
 }
 
-.session-options,
-.duration-options {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
-    user-select: none;
-}
-
-.session-option,
-.duration-option {
-    padding: var(--spacing-md);
-    border: 2px solid var(--primary-color);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: var(--transition);
-    background-color: var(--white-color);
-    position: relative;
-    overflow: hidden;
-}
-
-.session-option:hover,
-.duration-option:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-.session-option.active,
-.duration-option.active {
-    background: var(--gradient-gold);
-    color: var(--white-color);
-}
-
-.session-option.disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-.time-slots {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-md);
-}
-
-.time-slot {
-    padding: var(--spacing-md);
-    border: 2px solid var(--primary-color);
-    border-radius: 8px;
-    cursor: pointer;
+.savings-badge {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 0.5rem;
     text-align: center;
-    transition: var(--transition);
-    background-color: var(--white-color);
-    user-select: none;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    font-weight: 500;
 }
 
-.time-slot:hover {
-    transform: translateY(-2px);
+
+/* Features Section */
+
+.features-section {
+    background: white;
+    padding: 4rem 0;
+}
+
+.features-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.feature i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature h3 {
+    margin-bottom: 0.5rem;
+}
+
+
+/* FAQ Section */
+
+.faq-section {
+    padding: 4rem 0;
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.faq-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
     box-shadow: var(--shadow-sm);
 }
 
-.time-slot.selected {
-    background: var(--gradient-gold);
-    color: var(--white-color);
+.faq-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
 }
 
-.selected-sessions-list {
-    margin-top: var(--spacing-md);
-    padding: var(--spacing-md);
-    border: 1px solid var(--primary-color);
-    border-radius: 8px;
-    background-color: var(--white-color);
-}
 
-.selected-session-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-sm);
-    margin: 5px 0;
-    background-color: #f8f9fa;
-    border-radius: 4px;
-}
+/* Footer */
 
-.remove-session {
-    background: none;
-    border: none;
-    color: #dc3545;
-    cursor: pointer;
-    font-size: 1.2rem;
-    padding: 0 8px;
-}
-
-.submit-btn {
-    background: var(--gradient-gold);
-    color: var(--white-color);
-    padding: var(--spacing-md) var(--spacing-xl);
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: 600;
-    width: 100%;
-    transition: var(--transition);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: var(--spacing-lg);
-}
-
-.submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-.payment-section {
-    margin-top: var(--spacing-xl);
-    padding: var(--spacing-lg);
-    background-color: var(--white-color);
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
+.footer {
+    background: white;
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
 }
 
 .payment-methods {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-md);
-    margin: var(--spacing-lg) 0;
+    margin-top: 1rem;
 }
 
-.payment-method {
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: var(--spacing-md);
-    text-align: center;
-    cursor: pointer;
-    transition: var(--transition);
+.payment-methods i {
+    font-size: 2rem;
+    margin: 0 0.5rem;
+    color: var(--secondary-color);
 }
 
-.payment-method:hover {
-    border-color: var(--primary-color);
-    transform: translateY(-2px);
+
+/* Button Container */
+
+.button-container {
+    margin-top: 1.5rem;
 }
 
-.payment-method.selected {
-    border-color: var(--primary-color);
-    background-color: #eff6ff;
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .header {
+        padding: 3rem 0;
+    }
+    .header h1 {
+        font-size: 2rem;
+    }
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-.payment-method img {
-    height
+
+/* PayPal Button Customization */
+
+.paypal-button {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+}
