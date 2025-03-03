@@ -1,0 +1,103 @@
+:root {
+    /* Color System */
+    /* Core Brand Colors */
+    --primary: #DAA520;
+    --primary-dark: #B8860B;
+    --primary-light: #F4D03F;
+    --dark: #1A1A1A;
+    --dark-secondary: #242424;
+    --accent: #FCF6E9;
+    /* Semantic Colors */
+    --success: #10B981;
+    --warning: #F59E0B;
+    --error: #EF4444;
+    --info: #3B82F6;
+    /* Text Colors */
+    --text-primary: #1F2937;
+    --text-secondary: #4B5563;
+    --text-on-light: #1F2937;
+    --text-on-dark: #FFFFFF;
+    --text-muted: #6B7280;
+    /* Background System */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #1F2937;
+    --bg-tertiary: #F9FAFB;
+    --bg-card: rgba(31, 41, 55, 0.95);
+    --bg-overlay: rgba(0, 0, 0, 0.5);
+    /* Component Colors */
+    --card-bg: #1F2937;
+    --card-text: #FFFFFF;
+    --card-title: #DAA520;
+    --card-border: rgba(218, 165, 32, 0.2);
+    --input-bg: #FFFFFF;
+    --input-border: #E5E7EB;
+    --input-focus: #DAA520;
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, #B8860B, #DAA520, #F4D03F);
+    --gradient-dark: linear-gradient(145deg, rgba(31, 41, 55, 0.98) 0%, rgba(17, 24, 39, 0.98) 100%);
+    --gradient-light: linear-gradient(145deg, #FFFFFF, #F9FAFB);
+    /* Typography */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+    /* Font Sizes */
+    --text-xs: 0.75rem;
+    /* 12px */
+    --text-sm: 0.875rem;
+    /* 14px */
+    --text-base: 1rem;
+    /* 16px */
+    --text-lg: 1.125rem;
+    /* 18px */
+    --text-xl: 1.25rem;
+    /* 20px */
+    --text-2xl: 1.5rem;
+    /* 24px */
+    --text-3xl: 2rem;
+    /* 32px */
+    --text-4xl: 2.5rem;
+    /* 40px */
+    --text-5xl: 3.5rem;
+    /* 56px */
+    /* Spacing System */
+    --spacing-xs: 0.5rem;
+    /* 8px */
+    --spacing-sm: 1rem;
+    /* 16px */
+    --spacing-md: 1.5rem;
+    /* 24px */
+    --spacing-lg: 2rem;
+    /* 32px */
+    --spacing-xl: 3rem;
+    /* 48px */
+    --spacing-2xl: 4rem;
+    /* 64px */
+    /* Layout */
+    --container-max: 1280px;
+    --container-padding: 1.5rem;
+    --header-height: 80px;
+    --footer-padding: 4rem;
+    /* Borders */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 1rem;
+    --border-width-thin: 1px;
+    --border-width-thick: 2px;
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+    --shadow-gold: 0 8px 16px rgba(218, 165, 32, 0.15);
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 300ms ease-in-out;
+    --transition-slow: 500ms ease-in-out;
+    /* Z-index Layers */
+    --z-negative: -1;
+    --z-elevate: 1;
+    --z-sticky: 100;
+    --z-drawer: 200;
+    --z-modal: 300;
+    --z-popover: 400;
+    --z-maximum: 999;
+}

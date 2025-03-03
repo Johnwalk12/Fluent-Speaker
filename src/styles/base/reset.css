@@ -1,0 +1,165 @@
+/*! Premium Reset v2.0 | Modern Browser Optimization */
+
+
+/* Box Model Optimization */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Document Foundation */
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 80px;
+    /* Optimized for fixed headers */
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    line-height: 1.6;
+    min-height: 100vh;
+    font-family: var(--font-primary);
+    color: var(--text-primary);
+    background-color: var(--background);
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+/* Media Element Optimization */
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* Form Elements Normalization */
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+/* Button Enhancement */
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* Link Refinement */
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* Typography Optimization */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-secondary);
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+/* List Reset */
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Table Normalization */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* Focus State Enhancement */
+
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+
+/* Selection Styling */
+
+::selection {
+    background: var(--primary);
+    color: var(--text-on-dark);
+}
+
+
+/* Accessibility Optimization */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* Hidden Content */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* Content Flow */
+
+article>*+* {
+    margin-top: 1em;
+}

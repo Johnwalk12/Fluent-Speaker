@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your English Session</title>
+
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone.min.js"></script>
+
+    <style>
+        /* Base Styles */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+         :root {
+            --primary: #DAA520;
+            --secondary: #2C3E50;
+            --accent: #E67E22;
+            --background: #F5F5F5;
+            --text: #333333;
+            --white: #FFFFFF;
+            --dark-heading: #1a1a1a;
+            --primary-light: #F4D03F;
+            --primary-dark: #B8860B;
+            --gradient-gold: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-light));
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 4rem;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background: var(--background);
+            color: var(--text);
+        }
+        
+        .booking-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+        
+        .booking-form {
+            background: var(--white);
+            border-radius: 15px;
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-lg);
+        }
+        /* Headers and Text */
+        
+        h1 {
+            font-size: 2.5rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+        }
+        /* Form Elements */
+        
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 500;
+            color: var(--dark-heading);
+        }
+        /* Session Options */
+        
+        .session-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+            user-select: none;
+        }
+        
+        .session-option {
+            padding: var(--spacing-md);
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .session-option:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .session-option.active {
+            background: var(--gradient-gold);
+            color: var(--white);
+        }
+        
+        .session-option.disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        /* Duration Options */
+        
+        .duration-options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+            user-select: none;
+        }
+        
+        .duration-option {
+            padding: var(--spacing-md);
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            background: var(--white);
+        }
+        
+        .duration-option:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .duration-option.active {
+            background: var(--gradient-gold);
+            color: var(--white);
+        }
+        /* Calendar Styles */
+        
+        .flatpickr-calendar {
+            box-shadow: var(--shadow-lg) !important;
+            border-radius: 15px !important;
+            border: none !important;
+            width: 100% !important;
+        }
+        
+        .flatpickr-day.selected {
+            background: var(--primary) !important;
+            border-color: var(--primary) !important;
+        }
+        /* Time Slots */
+        
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        .time-slot {
+            padding: var(--spacing-md);
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: var(--transition);
+            background: var(--white);
+            user-select: none;
+        }
+        
+        .time-slot:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .time-slot.selected {
+            background: var(--gradient-gold);
+            color: var(--white);
+        }
+        /* Form Inputs */
+        
+        select,
+        input,
+        textarea {
+            width: 100%;
+            padding: var(--spacing-md);
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+        
+        select:focus,
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+        /* Payment Section */
+        
+        .payment-section {
+            margin-top: var(--spacing-xl);
+            padding: var(--spacing-lg);
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .wallet-info {
+            margin-top: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .wallet-address {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--spacing-md);
+            background: var(--white);
+            border-radius: 8px;
+            margin-top: var(--spacing-sm);
+        }
+        
+        .copy-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .copy-btn:hover {
+            background: var(--primary-dark);
+        }
+        /* Selected Sessions */
+        
+        .selected-sessions-list {
+            margin-top: var(--spacing-md);
+            padding: var(--spacing-md);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            background: var(--white);
+        }
+        
+        .selected-session-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm);
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .remove-session {
+            background: none;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0 8px;
+        }
+        /* Submit Button */
+        
+        .submit-btn {
+            background: var(--gradient-gold);
+            color: var(--white);
+            padding: var(--spacing-md) var(--spacing-xl);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: var(--spacing-lg);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        /* payment Design */
+        
+        .payment-section input[type="text"]:focus {
+            outline: none;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            .booking-container {
+                padding: var(--spacing-md);
+            }
+            .booking-form {
+                padding: var(--spacing-lg);
+            }
+            .duration-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .session-options {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        /* Calendar Container Styles */
+        
+        .flatpickr-calendar {
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+            border-radius: 20px !important;
+            border: none !important;
+            padding: 20px !important;
+            width: 100% !important;
+            max-width: 360px !important;
+            font-family: 'Poppins', sans-serif !important;
+        }
+        /* Month Navigation */
+        
+        .flatpickr-months {
+            background: var(--gradient-gold, linear-gradient(135deg, #B8860B, #DAA520, #F4D03F));
+            border-radius: 15px 15px 0 0;
+            padding: 10px 0;
+            margin: -20px -20px 10px -20px;
+            width: calc(100% + 40px);
+        }
+        
+        .flatpickr-month {
+            height: 50px !important;
+        }
+        
+        .flatpickr-current-month {
+            padding: 8px 0 0 !important;
+            font-size: 1.2em !important;
+        }
+        
+        .flatpickr-monthDropdown-months {
+            font-weight: 600 !important;
+            color: #ffffff !important;
+        }
+        /* Navigation Arrows */
+        
+        .flatpickr-prev-month,
+        .flatpickr-next-month {
+            top: 5px !important;
+            padding: 5px !important;
+        }
+        
+        .flatpickr-prev-month svg,
+        .flatpickr-next-month svg {
+            fill: #ffffff !important;
+        }
+        /* Weekday Headers */
+        
+        .flatpickr-weekdays {
+            background: transparent !important;
+            margin-top: 10px;
+        }
+        
+        .flatpickr-weekday {
+            color: #666 !important;
+            font-weight: 600 !important;
+            font-size: 0.9em !important;
+        }
+        /* Calendar Days */
+        
+        .flatpickr-day {
+            border-radius: 12px !important;
+            margin: 2px !important;
+            height: 40px !important;
+            line-height: 40px !important;
+            font-weight: 500 !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .flatpickr-day:hover {
+            background: #f5f5f5 !important;
+            border-color: #f5f5f5 !important;
+        }
+        
+        .flatpickr-day.selected {
+            background: var(--primary, #DAA520) !important;
+            border-color: var(--primary, #DAA520) !important;
+            color: white !important;
+            font-weight: 600 !important;
+        }
+        
+        .flatpickr-day.today {
+            border: 2px solid var(--primary, #DAA520) !important;
+            color: var(--primary, #DAA520) !important;
+        }
+        
+        .flatpickr-day.disabled {
+            color: #ddd !important;
+        }
+        /* Time Slots Grid */
+        
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .time-slot {
+            background: white;
+            border: 2px solid var(--primary, #DAA520);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .time-slot:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .time-slot.selected {
+            background: var(--gradient-gold, linear-gradient(135deg, #B8860B, #DAA520));
+            color: white;
+            border-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="booking-container">
+        <form class="booking-form" id="bookingForm" action="https://formsubmit.co/johnwalker199777@gmail.com" method="POST" enctype="multipart/form-data">
+
+            <!-- FormSubmit configuration fields -->
+            <input type="hidden" name="_subject" value="New English Session Booking">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://myspeakcoach.com/thank-you">
+            <input type="hidden" name="_cc" value="davidsmith1995d@gmail.com">
+            <input type="hidden" name="_replyto" value="%email%">
+            <input type="hidden" name="_autoresponse" value="Thank you for booking! We will confirm your session within 2 hours after verifying your payment.">
+
+            <!-- Booking Details Hidden Fields -->
+            <input type="hidden" name="booking_details" id="booking_details">
+            <input type="hidden" name="selected_session_type" id="selected_session_type">
+            <input type="hidden" name="selected_duration" id="selected_duration">
+            <input type="hidden" name="session_name" id="session_name">
+            <input type="hidden" name="base_price" id="base_price">
+            <input type="hidden" name="discount_percentage" id="discount_percentage">
+            <input type="hidden" name="discount_amount" id="discount_amount">
+            <input type="hidden" name="final_price" id="final_price">
+            <input type="hidden" name="session_times" id="session_times">
+            <input type="hidden" name="selected_sessions" id="selected_sessions">
+            <input type="hidden" name="total_price" id="total_price">
+            <input type="hidden" name="payment_amount" id="payment_amount">
+            <input type="hidden" name="session_details" id="session_details">
+
+            <h1>Book Your English Session</h1>
+
+            <!-- Session Type Selection -->
+            <div class="form-group">
+                <label class="form-label">Session Type</label>
+                <div class="session-options">
+                    <div class="session-option active" data-type="One-on-One">
+                        <h3>One-on-One Session</h3>
+                        <p>Personalized attention & feedback</p>
+                    </div>
+                    <div class="session-option disabled" data-type="Group">
+                        <h3>Group Session</h3>
+                        <p>Coming Soon!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Duration Selection -->
+            <div class="duration-options">
+                <div class="duration-option" data-duration="30" data-trial="true" data-price="1">
+                    <h3>Trial Session</h3>
+                    <p>30 Minutes</p>
+                    <p>$1</p>
+                </div>
+                <div class="duration-option" data-duration="30" data-price="10">
+                    <h3>Power Boost</h3>
+                    <p>30 Minutes</p>
+                    <p>$10</p>
+                </div>
+                <div class="duration-option" data-duration="45" data-price="15">
+                    <h3>Standard Session</h3>
+                    <p>45 Minutes</p>
+                    <p>$15</p>
+                </div>
+                <div class="duration-option" data-duration="60" data-price="20">
+                    <h3>Deep Dive Addition</h3>
+                    <p>60 Minutes</p>
+                    <p>$20</p>
+                </div>
+            </div>
+
+            <!-- Session Quantity -->
+            <div class="form-group">
+                <label class="form-label">Number of Sessions</label>
+                <select name="number_of_sessions" id="sessionCount">
+                    <option value="1">1 session</option>
+                    <option value="4">4 sessions (10% off)</option>
+                    <option value="8">8 sessions (20% off)</option>
+                    <option value="12">12 sessions (30% off)</option>
+                </select>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="form-group">
+                <label class="form-label">Your Email</label>
+                <input type="email" name="email" required placeholder="Enter your email">
+            </div>
+
+            <!-- Additional Information -->
+            <div class="form-group">
+                <label class="form-label">Learning Goals & Challenges (Optional)</label>
+                <textarea name="message" rows="4" placeholder="Share your English learning goals and any specific areas you'd like to focus on"></textarea>
+            </div>
+
+            <!-- Payment Section -->
+            <div style="background: var(--white); border-radius: 8px; padding: 1rem; box-shadow: var(--shadow-sm); margin-bottom: 1rem;">
+                <h4 style="margin: 0 0 0.75rem 0; font-size: 0.9rem; color: var(--text);">Purchase Summary</h4>
+                <div id="purchaseSummary" style="font-size: 0.8rem; color: var(--text);"></div>
+                <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid #eee;">
+                    <div style="display: flex; justify-content: space-between; font-weight: 500;">
+                        <span>Total Amount:</span>
+                        <span id="totalAmount" class="total-amount" style="color: var(--primary)">$0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Steps -->
+            <div style="background: var(--white); border-radius: 8px; padding: 1rem; box-shadow: var(--shadow-sm); margin-bottom: 1rem;">
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                    <div style="flex: 1; min-width: 120px;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="width: 18px; height: 18px; background: var(--primary); color: var(--white); border-radius: 50%; font-size: 0.7rem; display: flex; align-items: center; justify-content: center;">1</span>
+                            <span style="font-size: 0.8rem; color: var(--text);">Copy TRC20 address</span>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-width: 120px;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="width: 18px; height: 18px; background: var(--primary); color: var(--white); border-radius: 50%; font-size: 0.7rem; display: flex; align-items: center; justify-content: center;">2</span>
+                            <span style="font-size: 0.8rem; color: var(--text);">Send <span id="paymentAmount">$0.00</span></span>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-width: 120px;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="width: 18px; height: 18px; background: var(--primary); color: var(--white); border-radius: 50%; font-size: 0.7rem; display: flex; align-items: center; justify-content: center;">3</span>
+                            <span style="font-size: 0.8rem; color: var(--text);">Save proof</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TRC20 Address -->
+            <div style="background: #f8f9fa; padding: 0.75rem; border-radius: 4px; margin: 0.75rem 0;">
+                <div style="font-size: 0.75rem; color: #666; margin-bottom: 0.25rem;">TRC20 Address:</div>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <input type="text" value="TJNkN91DoafRWXsfFtnAM7FPBNcWpnJPjj" readonly style="flex: 1; padding: 0.4rem; border: 1px solid #e1e1e1; border-radius: 4px; font-size: 0.8rem; background: var(--white);">
+                    <button type="button" onclick="copyAddress()" style="background: var(--primary); color: var(--white); border: none; padding: 0.4rem 0.75rem; border-radius: 4px; font-size: 0.75rem; cursor: pointer;">
+                        Copy
+                    </button>
+                </div>
+            </div>
+
+            <!-- Crypto Help Link -->
+            <div style="background: #FFF8E5; padding: 0.5rem; border-radius: 4px; font-size: 0.75rem;">
+                <span style="color: var(--text);">New to crypto?</span>
+                <a href="https://www.binance.com/en/how-to-buy/tron-trc20" target="_blank" style="color: var(--primary); text-decoration: none; margin-left: 0.25rem;">Learn how →</a>
+            </div>
+
+            <!-- Verification Form -->
+            <div style="background: var(--white); border-radius: 8px; padding: 1rem; box-shadow: var(--shadow-sm);">
+                <!-- Hash Input -->
+                <div style="margin-bottom: 1rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                        <label style="font-size: 0.8rem; color: var(--text);">Transaction Hash</label>
+                        <span style="font-size: 0.65rem; background: #f0f0f0; padding: 0.15rem 0.5rem; border-radius: 4px; color: #666;">Optional</span>
+                    </div>
+                    <input type="text" name="transaction_hash" placeholder="Paste transaction hash or TronScan link" style="width: 100%; padding: 0.5rem; border: 1px solid #e1e1e1; border-radius: 4px; font-size: 0.8rem;">
+                </div>
+
+                <!-- File Upload -->
+                <div class="form-group">
+                    <label class="form-label">Payment Proof (Required)</label>
+                    <input type="file" id="payment_proof" name="attachment" accept="image/*,.pdf" required style="width: 100%; padding: 12px; border: 2px dashed var(--primary); border-radius: 8px;">
+                    <small style="color: #666; margin-top: 8px; display: block;">
+                        Accepted formats: PNG, JPG, PDF
+                    </small>
+                </div>
+
+                <!-- Info Note -->
+                <div style="margin-top: 1rem; padding: 0.5rem; background: #f8f9fa; border-radius: 4px; font-size: 0.7rem; color: #666;">
+                    Confirmation email will be sent within 2 hours after verification.
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Complete Booking</button>
+        </form>
+    </div>
+
+
+    <script>
+    </script>
+</body>
+
+</html>
