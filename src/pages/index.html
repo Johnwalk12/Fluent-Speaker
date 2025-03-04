@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -5,36 +6,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Transform your English speaking abilities with personalized coaching and structured learning paths. Break free from language barriers with expert guidance.">
-    <meta name="keywords" content="English coaching, language learning, speaking skills, personal English tutor, English fluency">
+    <meta name="description" content="Master English with personalized coaching at Fluent Speaker. Expert tutors, flexible schedules, and proven success in IELTS & TOEFL. Start your journey to fluency today!">
+    <meta name="keywords" content="English tutoring, online English classes, IELTS preparation, TOEFL coaching, English speaking practice, language learning, fluency training">
     <meta name="author" content="Fluent Speaker">
-    <meta name="theme-color" content="#D4AF37">
+    <meta name="theme-color" content="#FFB800">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
 
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Fluent Speaker - Break Free from English Barriers">
-    <meta property="og:description" content="Transform your English speaking abilities with personalized coaching and structured learning paths.">
-    <meta property="og:image" content="/assets/images/og-image.jpg">
+    <meta property="og:title" content="Fluent Speaker - Your Path to English Mastery">
+    <meta property="og:description" content="Transform your English with personalized coaching. Expert tutors, proven methods, guaranteed results.">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Johnwalk12/Fluent-Speaker@main/src/assets/images/og-image.jpg">
     <meta property="og:url" content="https://myspeakcoach.com">
+    <meta property="og:site_name" content="Fluent Speaker">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fluent Speaker - Your Path to English Mastery">
+    <meta name="twitter:description" content="Transform your English with personalized coaching. Expert tutors, proven methods, guaranteed results.">
+    <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Johnwalk12/Fluent-Speaker@main/src/assets/images/og-image.jpg">
 
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/Johnwalk12/Fluent-Speaker@main/src/assets/images/logo.svg">
+    <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/Johnwalk12/Fluent-Speaker@main/src/assets/images/logo-192.png">
+    <link rel="manifest" href="https://cdn.jsdelivr.net/gh/Johnwalk12/Fluent-Speaker@main/src/manifest.json">
 
     <!-- Title -->
-    <title>Fluent Speaker - Break Free from English Barriers</title>
+    <title>Fluent Speaker - Transform Your English Journey | Expert Coaching</title>
 
     <!-- Preconnect to External Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://images.unsplash.com">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- AOS Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Johnwalk12/Fluent-Speaker@main/src/styles/main.min.css">
 
-    <!-- Layout Styles -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Johnwalk12/Fluent-Speaker@latest/src/styles/main.css">
-
-    <!-- Preload Critical Assets -->
+    <!-- Deferred Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/Johnwalk12/Fluent-Speaker@main/src/scripts/animations.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/Johnwalk12/Fluent-Speaker@main/src/scripts/learning-journey.min.js" defer></script>
 
     <!-- Performance Optimization -->
     <script type="application/ld+json">
@@ -43,611 +62,3314 @@
             "@type": "LanguageSchool",
             "name": "Fluent Speaker",
             "description": "Premium English speaking coaching and personalized mentoring",
-            "url": "https://fluentspeaker.com",
+            "url": "https://myspeakcoach.com",
+            "logo": "https://cdn.jsdelivr.net/gh/Johnwalk12/Fluent-Speaker@main/src/assets/images/logo.svg",
+            "sameAs": [
+                "https://facebook.com/fluentspeaker",
+                "https://twitter.com/fluentspeaker",
+                "https://instagram.com/fluentspeaker"
+            ],
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "Global"
+            },
             "offers": {
                 "@type": "Offer",
                 "price": "15.00",
                 "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "1000"
             }
         }
     </script>
+
+    <!-- Critical CSS -->
+    <style>
+         :root {
+            --primary-color: #FFB800;
+            --primary-color-rgb: 255, 184, 0;
+            --secondary-color: #2C3E50;
+            --accent-color: #E67E22;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --background-primary: #FFFFFF;
+            --background-secondary: #F8F9FA;
+            --success-color: #4CAF50;
+            --info-color: #2196F3;
+            --warning-color: #FFC107;
+        }
+        /* Base Styles */
+        
+        .testimonials-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--background-secondary) 0%, #FFFFFF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+        }
+        
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 1rem auto 0;
+        }
+        /* Enhanced Testimonial Grid */
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            perspective: 1000px;
+        }
+        /* Enhanced Card Styles */
+        
+        .testimonial-card {
+            background: var(--background-primary);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transform-style: preserve-3d;
+        }
+        
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .testimonial-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .testimonial-card.featured {
+            grid-column: span 2;
+            background: linear-gradient(135deg, #FFF 0%, #F8F9FA 100%);
+            border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+        }
+        /* Enhanced Avatar Styles */
+        
+        .testimonial-avatar-wrapper {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            margin-right: 1.5rem;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        }
+        
+        .testimonial-avatar-svg {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover .testimonial-avatar-svg {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .avatar-badge {
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            background: #FFF;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            border: 2px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover .avatar-badge {
+            transform: scale(1.2) rotate(-15deg);
+        }
+        /* Enhanced Header Styles */
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .testimonial-meta {
+            flex: 1;
+        }
+        
+        .testimonial-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .testimonial-location {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0.2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .location-icon {
+            color: var(--accent-color);
+        }
+        /* Enhanced Rating Styles */
+        
+        .testimonial-rating {
+            margin-top: 0.5rem;
+        }
+        
+        .stars-outer {
+            position: relative;
+            display: inline-block;
+            color: #ddd;
+        }
+        
+        .stars-outer::before {
+            content: "★★★★★";
+        }
+        
+        .stars-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            color: var(--primary-color);
+        }
+        
+        .stars-inner::before {
+            content: "★★★★★";
+        }
+        /* Enhanced Quote Styles */
+        
+        .testimonial-quote {
+            position: relative;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0 0 1.5rem;
+            padding: 1rem 0;
+            color: var(--text-primary);
+        }
+        
+        .quote-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(-50%);
+            opacity: 0.1;
+            color: var(--primary-color);
+        }
+        /* Enhanced Achievement Styles */
+        
+        .testimonial-achievement {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(var(--primary-color-rgb), 0.1);
+            border-radius: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .achievement-icon {
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        /* Enhanced Progress Styles */
+        
+        .testimonial-progress {
+            margin-top: 1.5rem;
+        }
+        
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 4px;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Enhanced Skills Styles */
+        
+        .testimonial-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .skill-tag {
+            padding: 0.4rem 1rem;
+            background: rgba(var(--primary-color-rgb), 0.1);
+            color: var(--text-primary);
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        /* Enhanced Metrics Styles */
+        
+        .testimonial-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(var(--primary-color-rgb), 0.05);
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .metric:hover {
+            transform: translateY(-3px);
+        }
+        
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        /* Enhanced Score Breakdown */
+        
+        .score-breakdown {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .score-item {
+            margin: 1rem 0;
+        }
+        
+        .score-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .score-bar {
+            height: 8px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .score-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 4px;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        
+        .score-fill::after {
+            content: attr(data-score);
+            position: absolute;
+            right: 0;
+            top: -25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        /* Enhanced CTA Styles */
+        
+        .testimonials-cta {
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .btn--secondary {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn--secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn__shine {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient( 45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: 0.5s;
+        }
+        
+        .btn--secondary:hover .btn__shine {
+            left: 100%;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            .testimonials-section {
+                padding: 4rem 1rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .testimonial-card.featured {
+                grid-column: span 1;
+            }
+            .testimonial-metrics {
+                grid-template-columns: 1fr;
+            }
+            .metric {
+                padding: 0.8rem;
+            }
+            .metric-value {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .testimonial-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .testimonial-avatar-wrapper {
+                margin: 0 auto 1rem;
+            }
+            .testimonial-meta {
+                text-align: center;
+            }
+            .testimonial-skills {
+                justify-content: center;
+            }
+        }
+        /* Premium Testimonial Enhancements */
+        
+        .testimonial-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .testimonial-card:nth-child(n+5) {
+            display: none;
+        }
+        
+        .testimonials-grid.show-all .testimonial-card:nth-child(n+5) {
+            display: block;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .testimonials-controls {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .control-btn {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .control-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .control-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2);
+        }
+        
+        .control-btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .control-btn.active .btn-icon {
+            transform: rotate(180deg);
+        }
+        
+        .testimonials-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat-item {
+            text-align: center;
+            position: relative;
+        }
+        
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: -2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
+        }
+        
+        .stat-item:last-child::after {
+            display: none;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .testimonials-stats {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 1.5rem;
+            }
+            .stat-item::after {
+                display: none;
+            }
+            .stat-value {
+                font-size: 2rem;
+            }
+        }
+        /* Additional Premium Testimonial Styles */
+        
+        .testimonial-card.featured {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 1px solid rgba(33, 150, 243, 0.1);
+        }
+        
+        .testimonial-card.featured::before {
+            background: linear-gradient(90deg, #2196F3, #4CAF50);
+            opacity: 1;
+        }
+        
+        .testimonial-card.featured .testimonial-quote {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+        }
+        
+        .testimonial-card.featured .achievement-icon {
+            font-size: 1.4rem;
+        }
+        /* Enhanced Animations */
+        
+        @keyframes shine {
+            0% {
+                background-position: -100% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+        
+        .testimonial-card {
+            position: relative;
+            isolation: isolate;
+        }
+        
+        .testimonial-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient( 60deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background-size: 200% 100%;
+            animation: shine 3s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .testimonial-card:hover::after {
+            opacity: 1;
+        }
+        /* Enhanced Typography */
+        
+        .testimonial-quote {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            letter-spacing: -0.01em;
+        }
+        
+        .testimonial-name {
+            letter-spacing: -0.02em;
+        }
+        /* Enhanced Progress Bars */
+        
+        .progress-bar {
+            backdrop-filter: blur(4px);
+            background: rgba(241, 241, 241, 0.8);
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #4CAF50 0%, #2196F3 50%, #4CAF50 100%);
+            background-size: 200% 100%;
+            animation: gradientShift 3s linear infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+        /* Enhanced Skill Tags */
+        
+        .skill-tag {
+            border: 1px solid rgba(33, 150, 243, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-tag:hover {
+            border-color: transparent;
+            box-shadow: 0 4px 8px rgba(33, 150, 243, 0.2);
+        }
+        /* Stats Enhancement */
+        
+        .testimonials-stats {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 1px solid rgba(33, 150, 243, 0.1);
+        }
+        
+        .stat-value {
+            background-size: 200% auto;
+            animation: textGradient 4s linear infinite;
+        }
+        
+        @keyframes textGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+        /* Show More Button Enhancement */
+        
+        .control-btn {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .control-btn:hover .btn-icon {
+            animation: bounce 0.5s ease infinite;
+        }
+        
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(3px);
+            }
+        }
+        /* Mobile Optimizations */
+        
+        @media (max-width: 768px) {
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+            .testimonial-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .testimonial-avatar-wrapper {
+                margin: 0 auto 1rem;
+            }
+            .testimonial-meta {
+                text-align: center;
+            }
+            .testimonial-location {
+                justify-content: center;
+            }
+            .testimonial-skills {
+                justify-content: center;
+            }
+            .testimonials-stats {
+                margin: 2rem 1rem;
+                padding: 1rem;
+            }
+            .stat-value {
+                font-size: 2rem;
+            }
+        }
+        /* Dark Mode Support */
+        
+        @media (prefers-color-scheme: dark) {
+            .testimonials-section {
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d3436 100%);
+            }
+            .testimonial-card {
+                background: #2d3436;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+            .section-title {
+                background: linear-gradient(120deg, #ffffff 0%, #e1e1e1 100%);
+                -webkit-background-clip: text;
+            }
+            .section-subtitle {
+                color: #a0a0a0;
+            }
+            .testimonial-name {
+                color: #ffffff;
+            }
+            .testimonial-quote {
+                color: #e1e1e1;
+            }
+            .skill-tag {
+                background: rgba(33, 150, 243, 0.1);
+                color: #e1e1e1;
+            }
+            .testimonials-stats {
+                background: #2d3436;
+            }
+            .stat-value {
+                color: #ffffff;
+            }
+            .stat-label {
+                color: #a0a0a0;
+            }
+        }
+        
+        .hero__features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            padding: 0 1rem;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .feature__icon-wrapper {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .feature__icon {
+            width: 32px;
+            height: 32px;
+            color: #FFD700;
+            z-index: 1;
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
+        }
+        
+        .feature__icon-path {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        .feature__icon-main {
+            fill: currentColor;
+        }
+        
+        .feature__icon-accent {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            opacity: 0.7;
+        }
+        
+        .feature__icon-ripple {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: ripple 2s ease-out infinite;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        .feature__content {
+            flex: 1;
+        }
+        
+        .feature__title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin: 0 0 0.5rem;
+        }
+        
+        .feature__description {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .hero__features {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .feature {
+                padding: 1.25rem;
+            }
+            .feature__icon-wrapper {
+                width: 40px;
+                height: 40px;
+            }
+            .feature__icon {
+                width: 28px;
+                height: 28px;
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .feature:hover {
+                transform: none;
+            }
+            .feature__icon-ripple {
+                animation: none;
+            }
+        }
+        /* Hero Section Enhancements */
+        
+        .hero__bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .hero__bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6) saturate(1.2);
+            transform: scale(1.1);
+            animation: zoomBg 20s ease-in-out infinite alternate;
+        }
+        
+        @keyframes zoomBg {
+            0% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+        
+        .hero__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient( 135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+            z-index: -1;
+        }
+        
+        .hero__content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            position: relative;
+        }
+        
+        .hero__rating {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeInDown 0.8s ease-out;
+        }
+        
+        .stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .rating-text {
+            color: #FFFFFF;
+            font-size: 0.95rem;
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        .hero__title {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            line-height: 1.2;
+            margin: 0 0 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #4CAF50, #2196F3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #4CAF50, #2196F3);
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: lineGrow 0.8s ease-out 1s forwards;
+        }
+        
+        @keyframes lineGrow {
+            to {
+                transform: scaleX(1);
+            }
+        }
+        
+        .hero__subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0 0 1.5rem;
+            max-width: 800px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .hero__highlight {
+            font-size: 1.2rem;
+            color: #FFD700;
+            margin: 0 0 2.5rem;
+            font-weight: 500;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        
+        .hero__cta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn--primary {
+            background: linear-gradient(135deg, #4CAF50, #2196F3);
+            color: #FFFFFF;
+            border: none;
+        }
+        
+        .btn--secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn__shine {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient( 45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) rotate(45deg);
+            }
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero__content {
+                padding: 4rem 1.5rem;
+            }
+            .hero__title {
+                font-size: 2.5rem;
+            }
+            .hero__subtitle {
+                font-size: 1.2rem;
+            }
+            .hero__highlight {
+                font-size: 1rem;
+            }
+            .hero__cta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .hero__bg-image,
+            .btn__shine,
+            .highlight::after {
+                animation: none;
+            }
+            .hero__rating,
+            .hero__title,
+            .hero__subtitle,
+            .hero__highlight,
+            .hero__cta {
+                animation: fadeIn 0.5s ease-out forwards;
+            }
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                }
+            }
+        }
+        
+        .achievement-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3436;
+            margin-bottom: 1rem;
+            background: linear-gradient(120deg, #2d3436 0%, #000000 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .achievement-description {
+            font-size: 1.1rem;
+            color: #636e72;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .achievement-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .achievement-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            padding: 1.25rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .achievement-feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #4CAF50, #2196F3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .achievement-feature:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .achievement-feature:hover::before {
+            opacity: 1;
+        }
+        
+        .achievement-feature-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(76, 175, 80, 0.1);
+            border-radius: 12px;
+            color: #4CAF50;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .achievement-feature-icon::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(76, 175, 80, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .achievement-feature:hover .achievement-feature-icon::after {
+            opacity: 1;
+        }
+        
+        .icon-path {
+            fill: currentColor;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        .icon-circle {
+            stroke-dasharray: 60;
+            stroke-dashoffset: 60;
+            animation: circleDraw 1s ease-out forwards;
+        }
+        
+        @keyframes circleDraw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        .achievement-feature-content {
+            flex: 1;
+        }
+        
+        .achievement-feature-title {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 0.25rem;
+        }
+        
+        .achievement-feature-description {
+            display: block;
+            font-size: 0.95rem;
+            color: #636e72;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .achievement-feature {
+                padding: 1rem;
+            }
+            .achievement-feature-icon {
+                width: 40px;
+                height: 40px;
+            }
+            .achievement-feature-title {
+                font-size: 1rem;
+            }
+            .achievement-feature-description {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .achievement-feature:hover {
+                transform: none;
+            }
+            .icon-circle {
+                animation: none;
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
 </head>
 
-</head>
-
-<body>
-
-    <section class="hero" id="hero">
-        <!-- Background Elements -->
-        <div class="hero__bg">
-            <img class="hero__bg-image" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80" alt="Students learning English" loading="eager">
-        </div>
-        <div class="hero__overlay"></div>
-
-        <!-- Floating Elements -->
-        <div class="hero__floating-element hero__floating-element--1"></div>
-        <div class="hero__floating-element hero__floating-element--2"></div>
-
-        <!-- Main Content -->
-        <div class="hero__content">
-            <!-- Rating Section -->
-            <div class="hero__rating" aria-label="Five star rating">
-                <div class="stars">
-                    ★★★★★
-                </div>
-                <p class="rating-text">Rated 5 stars by students</p>
-            </div>
-
-            <!-- Main Text Content -->
-            <h1 class="hero__title">
-                Break Free from English Barriers,
-                <br>
-                <span>Express the Real You</span>
-            </h1>
-
-            <p class="hero__subtitle">
-                Transform Your English Journey Through Personalized Mentoring
-            </p>
-
-            <p class="hero__highlight">
-                Where Every Word Builds Your Confidence, Every Session Shapes Your Success
-            </p>
-
-            <!-- Call to Action Buttons -->
-            <div class="hero__cta">
-                <a href="https://myspeakcoach.com/book-your-session" class="btn btn--primary" data-tracking="hero-trial">
-                Book Free Trial
-                <span class="btn__shine"></span>
-            </a>
-                <a href="https://myspeakcoach.com/book-your-session" class="btn btn--secondary" data-tracking="hero-session">
-                Book Sessions
-                <span class="btn__shine"></span>
-            </a>
-            </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="hero__scroll">
-            <span class="hero__scroll-text">Scroll to explore</span>
-            <div class="hero__scroll-icon"></div>
-        </div>
-    </section>
-    <section class="features-section">
-        <div class="features-grid">
-            <!-- Card 1 -->
-            <div class="feature-card">
-                <div class="card-icon">🌱</div>
-                <h3 class="card-title">Never Feel Lost in Conversation</h3>
-                <ul class="feature-list">
-                    <li class="feature-item">Watch as hesitation transforms into confidence</li>
-                    <li class="feature-item">Detailed progress tracking that celebrates every win</li>
-                    <li class="feature-item">Your personal mentor, guiding every step</li>
-                    <li class="feature-item">Not just lessons - but a partnership in your success</li>
-                </ul>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="feature-card">
-                <div class="card-icon">🚀</div>
-                <h3 class="card-title">Beyond Just Learning</h3>
-                <ul class="feature-list">
-                    <li class="feature-item">Personalized learning materials that match your goals</li>
-                    <li class="feature-item">Custom content aligned with your interests</li>
-                    <li class="feature-item">Word by word, session by session progress</li>
-                    <li class="feature-item">Smart session summaries with key takeaways</li>
-                </ul>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="feature-card">
-                <div class="card-icon">👑</div>
-                <h3 class="card-title">Your Transformation</h3>
-                <ul class="feature-list">
-                    <li class="feature-item">Master subtle cultural nuances</li>
-                    <li class="feature-item">Speak with natural sophistication</li>
-                    <li class="feature-item">Command any audience with ease</li>
-                    <li class="feature-item">Break through language barriers</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section class="credentials-section">
-        <div class="credentials-container">
-            <div class="section-header">
-                <h2 class="section-title">Why Choose Me As Your English Mentor?</h2>
-                <p class="section-subtitle">Join hundreds of successful students who have transformed their English proficiency</p>
-            </div>
-
-            <div class="credentials-grid">
-                <!-- Success Rate Card -->
-                <div class="credential-card">
-                    <div class="credential-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                    </div>
-                    <div class="credential-stats">98%</div>
-                    <h3 class="credential-title">Success Rate</h3>
-                    <p class="credential-description">Consistently helping students achieve their target IELTS and TOEFL scores through personalized coaching.</p>
-                </div>
-
-                <!-- Experience Card -->
-                <div class="credential-card">
-                    <div class="credential-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                        </svg>
-                    </div>
-                    <div class="credential-stats">5+</div>
-                    <h3 class="credential-title">Years Experience</h3>
-                    <p class="credential-description">Extensive experience teaching students from diverse backgrounds and proficiency levels.</p>
-                </div>
-
-                <!-- Students Card -->
-                <div class="credential-card">
-                    <div class="credential-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-                        </svg>
-                    </div>
-                    <div class="credential-stats">1000+</div>
-                    <h3 class="credential-title">Students Taught</h3>
-                    <p class="credential-description">Successfully mentored students from over 30 countries, creating a global learning community.</p>
-                </div>
-
-                <!-- Certifications Card -->
-                <div class="credential-card">
-                    <div class="credential-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L2 9l10 7 10-7-10-7zm0 18l-10-7v2l10 7 10-7v-2l-10 7z"/>
-                        </svg>
-                    </div>
-                    <div class="credential-stats">4+</div>
-                    <h3 class="credential-title">Certifications</h3>
-                    <p class="credential-description">TEFL/TESOL certified with additional specializations in language assessment and teaching methodology.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="testimonials-section">
-        <div class="section-header">
-            <h2 class="section-title">What Our Students Say</h2>
-            <p class="section-subtitle">Real experiences from our valued learners worldwide</p>
-        </div>
-
-        <div class="testimonials-grid" id="testimonialsGrid">
-            <!-- Initial Visible Testimonials -->
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <div class="student-info">
-                        <div class="student-avatar">DA</div>
-                        <div class="student-details">
-                            <h4 class="student-name">Dmitry Artyukov</h4>
-                            <span class="date">Feb 10, 2024</span>
-                        </div>
-                        <div class="rating">
-                            <span class="stars">★★★★★</span>
-                        </div>
-                    </div>
-                    <p>"John is the best English teacher I have ever met! Thank you very much!"</p>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <div class="student-info">
-                        <div class="student-avatar">TS</div>
-                        <div class="student-details">
-                            <h4 class="student-name">Tymoteusz Szturc</h4>
-                            <span class="date">Jan 30, 2024</span>
-                        </div>
-                        <div class="rating">
-                            <span class="stars">★★★★★</span>
-                        </div>
-                    </div>
-                    <p>"I am very satisfied with the classes"</p>
-                </div>
-            </div>
-
-
-            <!-- Continue with other testimonials following the same pattern -->
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <div class="student-info">
-                        <div class="student-avatar">MZ</div>
-                        <div class="student-details">
-                            <h4 class="student-name">Maryam Zarei</h4>
-                            <span class="date">Dec 31, 2023</span>
-                        </div>
-                        <div class="rating">
-                            <span class="stars">★★★★★</span>
-                        </div>
-                    </div>
-                    <p>"John is a professional teacher who truly understands your needs. He customizes the training materials to align with your goals, ensuring effective learning."</p>
-                </div>
-            </div>
-
-            <!-- Add data-animation="fade-up" to each card for scroll animations -->
-
-            <div class="testimonial-card hidden" data-animation="fade-up">
-                <div class="testimonial-content">
-                    <div class="student-info">
-                        <div class="student-avatar">AR</div>
-                        <div class="student-details">
-                            <h4 class="student-name">ABDOUL RAHIM SOULEYMANE INOUSSA</h4>
-                            <span class="date">Dec 27, 2023</span>
-                        </div>
-                        <div class="rating">
-                            <span class="stars">★★★★★</span>
-                        </div>
-                    </div>
-                    <p>"Very interesting lesson, learned reading and speaking."</p>
-                </div>
-            </div>
-
-            <div class="testimonial-card hidden" data-animation="fade-up">
-                <div class="testimonial-content">
-                    <div class="student-info">
-                        <div class="student-avatar">SD</div>
-                        <div class="student-details">
-                            <h4 class="student-name">Sandra Da Silva</h4>
-                            <span class="date">Dec 04, 2023</span>
-                        </div>
-                        <div class="rating">
-                            <span class="stars">★★★★★</span>
-                        </div>
-                    </div>
-                    <p>"He is amazing as a teacher! He works with feedback whatever the student needs, showing compact interest in helping his students. In my opinion, he is the BEST TEACHER!!!"</p>
-                </div>
-            </div>
-
-            <div class="testimonial-card hidden" data-animation="fade-up">
-                <div class="testimonial-content">
-                    <div class="student-info">
-                        <div class="student-avatar">M</div>
-                        <div class="student-details">
-                            <h4 class="student-name">Margherita</h4>
-                            <span class="date">Nov 29, 2023</span>
-                        </div>
-                        <div class="rating">
-                            <span class="stars">★★★★★</span>
-                        </div>
-                    </div>
-                    <p>"I liked my first lesson a lot; John was well prepared and full of initiative. I feel like the lessons will be a challenge and can't wait for the next one :)"</p>
-                </div>
-            </div>
-
-            <div class="testimonial-card hidden" data-animation="fade-up">
-                <div class="testimonial-content">
-                    <div class="student-info">
-                        <div class="student-avatar">G</div>
-                        <div class="student-details">
-                            <h4 class="student-name">Gafran</h4>
-                            <span class="date">Oct 28, 2023</span>
-                        </div>
-                        <div class="rating">
-                            <span class="stars">★★★★★</span>
-                        </div>
-                    </div>
-                    <p>"جدا رائع اكثر ماكنت انتظره ان أتدرب على المحادثات فقط وان يتم تصحيح الأخطاء والتدريب على الكلمات الصحيحه وان لا اذهب إلى مابعد الخطاً إلا بعد ان أقوم بعمله بالطريقه الصحيحه شكرا."</p>
-                </div>
-            </div>
-
-            <div class="testimonial-card hidden" data-animation="fade-up">
-                <div class="testimonial-content">
-                    <div class="student-info">
-                        <div class="student-avatar">TM</div>
-                        <div class="student-details">
-                            <h4 class="student-name">Trivikram Malladi</h4>
-                            <span class="date">Oct 23, 2023</span>
-                        </div>
-                        <div class="rating">
-                            <span class="stars">★★★★★</span>
-                        </div>
-                    </div>
-                    <p>"I am really thankful for the extra time he provided!"</p>
-                </div>
-            </div>
-
-            <div class="testimonial-card hidden" data-animation="fade-up">
-                <div class="testimonial-content">
-                    <div class="student-info">
-                        <div class="student-avatar">K</div>
-                        <div class="student-details">
-                            <h4 class="student-name">Karolina</h4>
-                            <span class="date">Oct 15, 2023</span>
-                        </div>
-                        <div class="rating">
-                            <span class="stars">★★★★★</span>
-                        </div>
-                    </div>
-                    <p>"My main goal is to improve my speaking and John is the right choice - I have regular lessons with him and I'm really improving and also enjoying the lessons. We talk about everything and I get instant feedback so I don't repeat mistakes.
-                        Definitely recommend."</p>
-                </div>
-            </div>
-
-            <div class="testimonial-card hidden" data-animation="fade-up">
-                <div class="testimonial-content">
-                    <div class="student-info">
-                        <div class="student-avatar">AR</div>
-                        <div class="student-details">
-                            <h4 class="student-name">Alena Razbezhkina</h4>
-                            <span class="date">Sept 30, 2023</span>
-                        </div>
-                        <div class="rating">
-                            <span class="stars">★★★★★</span>
-                        </div>
-                    </div>
-                    <p>"I really enjoy my lessons with John. The sessions are very diverse – we do a lot of speaking and listening and actively work on expanding my vocabulary. John corrects my mistakes and provides a lot of useful material in every session.
-                        I can feel the progress after each lesson."</p>
-                </div>
-            </div>
-
-            <div class="testimonial-card hidden" data-animation="fade-up">
-                <div class="testimonial-content">
-                    <div class="student-info">
-                        <div class="student-avatar">ZL</div>
-                        <div class="student-details">
-                            <h4 class="student-name">zhongbo Liu</h4>
-                            <span class="date">Sept 30, 2023</span>
-                        </div>
-                        <div class="rating">
-                            <span class="stars">★★★★★</span>
-                        </div>
-                    </div>
-                    <p>"John is an excellent tutor, unlike anyone I've met before. His learning tips are always incredibly helpful!"</p>
-                </div>
-            </div>
-
-            <div class="testimonial-card hidden" data-animation="fade-up">
-                <div class="testimonial-content">
-                    <div class="student-info">
-                        <div class="student-avatar">DK</div>
-                        <div class="student-details">
-                            <h4 class="student-name">David Kasparek</h4>
-                            <span class="date">Sept 20, 2023</span>
-                        </div>
-                        <div class="rating">
-                            <span class="stars">★★★★★</span>
-                        </div>
-                    </div>
-                    <p>"I really appreciate John's focus on student's needs and detailed feedback and tips he provides. Lessons are structured precisely according to targets we set on the first lecture. After each lesson, I get PDF materials with a summary
-                        of my mistakes and tips on how to improve my language skills. It is very very useful."</p>
-                </div>
-            </div>
-
-            <div class="testimonial-card hidden" data-animation="fade-up">
-                <div class="testimonial-content">
-                    <div class="student-info">
-                        <div class="student-avatar">AS</div>
-                        <div class="student-details">
-                            <h4 class="student-name">Anonymous Student</h4>
-                            <span class="date">Aug 13, 2023</span>
-                        </div>
-                        <div class="rating">
-                            <span class="stars">★★★★★</span>
-                        </div>
-                    </div>
-                    <p>"Мне нравится урок с John потому-что он старается чтобы я делал и понимал не все сразу а шаг за шагом. Я считаю это отличная возможность для правильного изучения английского языка. Так же мне понравилось что после урока я получил обратную
-                        связь об ошибках и на следующем уроке мы еще раз проговорили про эти ошибки. Рекомендую данного учителя."</p>
-                </div>
-            </div>
-
-            <div class="testimonial-card hidden" data-animation="fade-up">
-                <div class="testimonial-content">
-                    <div class="student-info">
-                        <div class="student-avatar">AB</div>
-                        <div class="student-details">
-                            <h4 class="student-name">Anna Baranova</h4>
-                            <span class="date">Aug 09, 2023</span>
-                        </div>
-                        <div class="rating">
-                            <span class="stars">★★★★★</span>
-                        </div>
-                    </div>
-                    <p>"Perfect and interesting lessons, John takes into account all my needs to provide the most efficient support. Thank you!"</p>
-                </div>
-            </div>
-        </div>
-        </div>
-
-        <div class="button-container">
-            <button id="showMoreTestimonials" class="btn btn--primary">
-                <span class="btn-text">Show More Testimonials</span>
-                <span class="btn-icon">↓</span>
-            </button>
-            <button id="shareExperience" class="btn btn--primary">
-                <span class="btn-text">Share Your Experience</span>
-                <span class="btn-icon">✍</span>
-            </button>
-            <button id="showLessBtn" class="btn btn--primary" style="display: none;">
-                <span class="btn-text">Show Less</span>
-                <span class="btn-icon">↑</span>
-            </button>
-        </div>
-
-
-        <!-- Enhanced Modal -->
-        <div id="testimonialModal" class="modal" role="dialog" aria-labelledby="modalTitle">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 id="modalTitle">Share Your Experience</h3>
-                    <button class="close-btn" aria-label="Close modal">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-
-                <form class="testimonial-form" action="https://formsubmit.co/johnwalker199777@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="New Student Testimonial">
-                    <input type="hidden" name="_next" value="https://myspeakcoach.com/book-your-session">
-                    <input type="hidden" name="_captcha" value="false">
-
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" class="form-control" required placeholder="Enter your full name">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" class="form-control" required placeholder="your.email@example.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="testimonial">Your Experience *</label>
-                        <textarea id="testimonial" name="testimonial" class="form-control" rows="5" required placeholder="Share your learning experience with John..."></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="rating">Overall Rating *</label>
-                        <div class="rating-container">
-                            <span class="rating-label">Select your rating:</span>
-                            <div class="stars-wrapper">
-                                <span class="star active">&#9733;</span>
-                                <span class="star active">&#9733;</span>
-                                <span class="star active">&#9733;</span>
-                                <span class="star active">&#9733;</span>
-                                <span class="star active">&#9733;</span>
-                            </div>
-                        </div>
-                        <select id="rating" name="rating" class="form-control" required>
-                          <option value="" disabled selected>Select your rating</option>
-                          <option value="5">★★★★★ Excellent</option>
-                          <option value="4">★★★★☆ Very Good</option>
-                          <option value="3">★★★☆☆ Good</option>
-                          <option value="2">★★☆☆☆ Fair</option>
-                          <option value="1">★☆☆☆☆ Poor</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="submit-btn">
-                        <span class="btn-text">Submit Your Review</span>
-                        <div class="loading-spinner"></div>
-                      </button>
-                </form>
-
-
-                <!-- Success Message Template -->
-                <div class="success-message hidden">
-                    <div class="success-icon">✓</div>
-                    <h4>Thank You!</h4>
-                    <p>Your testimonial has been submitted successfully.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+<body class="page-wrapper">
     <!-- Loading Indicator -->
     <div class="loading-overlay hidden">
         <div class="loader"></div>
     </div>
 
-    <!-- Notification System -->
-    <div class="notification-container" id="notificationContainer"></div>
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero__bg">
+                <img class="hero__bg-image" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1920" alt="Students learning English" width="1920" height="1080" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero__overlay"></div>
 
-    <!-- Premium $10,000 Footer Section -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <a href="https://myspeakcoach.com" class="footer-logo">Transform Your English Journey</a>
-                <p class="footer-description">Join thousands of successful students who have achieved their English language goals through our personalized coaching approach.</p>
-                <div class="achievement-cards">
-                    <div class="achievement-card">
-                        <h3>1000+</h3>
-                        <p>Students Taught</p>
-                    </div>
-                    <div class="achievement-card">
-                        <h3>95%</h3>
-                        <p>Success Rate</p>
-                    </div>
-                    <div class="achievement-card">
-                        <h3>4.9/5</h3>
-                        <p>Student Rating</p>
-                    </div>
+            <div class="hero__content">
+                <div class="hero__rating" aria-label="Five star rating">
+                    <div class="stars">★★★★★</div>
+                    <p class="rating-text">Trusted by 1000+ Students Worldwide</p>
                 </div>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61571831396155" class="social-link" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
+
+                <h1 class="hero__title">
+                    Master English with
+                    <br>
+                    <span class="highlight">Confidence & Style</span>
+                </h1>
+
+                <p class="hero__subtitle">
+                    Personalized coaching that transforms your English speaking abilities
+                </p>
+
+                <p class="hero__highlight">
+                    Join students from 30+ countries achieving their English goals
+                </p>
+
+                <div class="hero__cta">
+                    <a href="/book-trial" class="btn btn--primary">
+                        Start Free Trial
+                        <span class="btn__shine"></span>
                     </a>
-                    <a href="https://instagram.com/john.walker466" class="social-link" target="_blank">
-                        <i class="fab fa-instagram"></i>
+                    <a href="/pricing" class="btn btn--secondary">
+                        View Pricing
+                        <span class="btn__shine"></span>
                     </a>
-                    <a href="https://wa.me/447412898550" class="social-link" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/john-walker-466" class="social-link" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
+                </div>
+
+                <div class="hero__features">
+                    <div class="feature" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature__icon-wrapper">
+                            <svg class="feature__icon" viewBox="0 0 24 24" width="24" height="24">
+                                <path class="feature__icon-path" d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
+                                <circle class="feature__icon-accent" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path class="feature__icon-main" d="M9.78 13h4.44c.43 0 .78-.35.78-.78V9.78c0-.43-.35-.78-.78-.78H9.78c-.43 0-.78.35-.78.78v2.44c0 .43.35.78.78.78zM15 16h2v2h-2zm-4 0h2v2h-2zm-4 0h2v2H7z"/>
+                            </svg>
+                            <div class="feature__icon-ripple"></div>
+                        </div>
+                        <div class="feature__content">
+                            <h3 class="feature__title">Expert Native Tutors</h3>
+                            <p class="feature__description">Learn from experienced CELTA-certified teachers with proven track records</p>
+                        </div>
+                    </div>
+
+                    <div class="feature" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature__icon-wrapper">
+                            <svg class="feature__icon" viewBox="0 0 24 24" width="24" height="24">
+                                <path class="feature__icon-path" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+                                <path class="feature__icon-main" d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                            </svg>
+                            <div class="feature__icon-ripple"></div>
+                        </div>
+                        <div class="feature__content">
+                            <h3 class="feature__title">Flexible Schedule</h3>
+                            <p class="feature__description">Book lessons 24/7 at times that work best for you</p>
+                        </div>
+                    </div>
+
+                    <div class="feature" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature__icon-wrapper">
+                            <svg class="feature__icon" viewBox="0 0 24 24" width="24" height="24">
+                                <path class="feature__icon-path" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/>
+                                <path class="feature__icon-main" d="M9 17l3-2.94c.39-.39 1.02-.39 1.41 0L16.82 17"/>
+                                <path class="feature__icon-accent" d="M7 14l.01-2.97c0-.52.42-.94.94-.94h8.1c.52 0 .94.42.94.94v2.97"/>
+                            </svg>
+                            <div class="feature__icon-ripple"></div>
+                        </div>
+                        <div class="feature__content">
+                            <h3 class="feature__title">Guaranteed Results</h3>
+                            <p class="feature__description">See measurable progress or get your money back</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="footer-nav">
-                <h4 class="footer-nav-title">Quick Links</h4>
-                <ul class="footer-nav-list">
-                    <li class="footer-nav-item"><a href="https://myspeakcoach.com">Home</a></li>
-                    <li class="footer-nav-item"><a href="#https://myspeakcoach.com/courses">Courses</a></li>
-                    <li class="footer-nav-item"><a href="https://myspeakcoach.com/book-your-session">Book Your Session</a></li>
-                    <li class="footer-nav-item"><a href="#sample">Sample</a></li>
-                    <li class="footer-nav-item"><a href="#ielts-prep">IELTS Preparation</a></li>
-                    <li class="footer-nav-item"><a href="#toefl-prep">TOEFL Preparation</a></li>
-                    <li class="footer-nav-item"><a href="#business-english">Business English</a></li>
-                    <li class="footer-nav-item"><a href="#testimonials">Testimonials</a></li>
-                </ul>
+            <div class="hero__scroll">
+                <span class="hero__scroll-text">Explore Our Programs</span>
+                <div class="hero__scroll-icon"></div>
             </div>
-
-            <div class="footer-contact">
-                <h4 class="footer-nav-title">Get in Touch</h4>
-                <div class="contact-info">
-                    <i class="fas fa-phone contact-icon"></i>
-                    <div class="contact-details">
-                        <h4>Call Us</h4>
-                        <p>+44 7412898550</p>
-                    </div>
+        </section>
+        <!-- Credentials Section -->
+        <section class="credentials-section" data-aos="fade">
+            <div class="credentials-section__background">
+                <div class="credentials-section__overlay"></div>
+                <div class="credentials-section__pattern"></div>
+                <div class="credentials-section__shapes">
+                    <div class="floating-shape"></div>
+                    <div class="floating-shape"></div>
+                    <div class="floating-shape"></div>
                 </div>
-                <div class="contact-info">
-                    <i class="fas fa-envelope contact-icon"></i>
-                    <div class="contact-details">
-                        <h4>Email Us</h4>
-                        <p>johnwalker199777@gmail.com</p>
-                    </div>
-                </div>
-                <form class="contact-form" action="https://formsubmit.co/johnwalker199777@gmail.com" method="POST">
-                    <input type="text" name="_honey" style="display:none">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://myspeakcoach.com/thank-you">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" rows="3" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
             </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2025 All rights reserved. Designed with <i class="fas fa-heart" style="color: var(--gold-primary)"></i> by John Walker</p>
-        </div>
-    </footer>
-
-    <script>
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            functions.submitForm('https://formsubmit.co/johnwalker199777@gmail.com', formData)
-                .then(response => {
-                    if (response.ok) {
-                        alert('Message sent successfully!');
-                        this.reset();
-                    } else {
-                        throw new Error('Something went wrong');
+            <style>
+                .credentials-section {
+                    position: relative;
+                    padding: 8rem 0;
+                    background: linear-gradient(135deg, #1a1f35 0%, #2a2f45 100%);
+                    overflow: hidden;
+                    color: #fff;
+                }
+                
+                .credentials-section__background {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 0;
+                }
+                
+                .credentials-section__overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient(circle at center, rgba(255, 184, 0, 0.15) 0%, transparent 70%);
+                    animation: pulse 4s ease-in-out infinite;
+                }
+                
+                .credentials-section__pattern {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.03;
+                    background-image: linear-gradient(45deg, #FFB800 25%, transparent 25%), linear-gradient(-45deg, #FFB800 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #FFB800 75%), linear-gradient(-45deg, transparent 75%, #FFB800 75%);
+                    background-size: 20px 20px;
+                    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+                }
+                
+                .credentials-section__shapes {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+                
+                .floating-shape {
+                    position: absolute;
+                    width: 150px;
+                    height: 150px;
+                    border: 2px solid rgba(255, 184, 0, 0.1);
+                    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                    animation: float 10s infinite linear;
+                }
+                
+                .floating-shape:nth-child(1) {
+                    top: 10%;
+                    left: 10%;
+                    animation-delay: 0s;
+                }
+                
+                .floating-shape:nth-child(2) {
+                    top: 60%;
+                    right: 15%;
+                    width: 100px;
+                    height: 100px;
+                    animation-delay: -3s;
+                }
+                
+                .floating-shape:nth-child(3) {
+                    bottom: 20%;
+                    left: 20%;
+                    width: 80px;
+                    height: 80px;
+                    animation-delay: -6s;
+                }
+                
+                @keyframes float {
+                    0% {
+                        transform: rotate(0deg) translate(0, 0) scale(1);
                     }
-                })
-                .catch(error => {
-                    alert('There was an error sending your message. Please try again.');
+                    33% {
+                        transform: rotate(120deg) translate(20px, -20px) scale(1.1);
+                    }
+                    66% {
+                        transform: rotate(240deg) translate(-20px, 20px) scale(0.9);
+                    }
+                    100% {
+                        transform: rotate(360deg) translate(0, 0) scale(1);
+                    }
+                }
+                
+                @keyframes pulse {
+                    0% {
+                        opacity: 0.5;
+                    }
+                    50% {
+                        opacity: 0.8;
+                    }
+                    100% {
+                        opacity: 0.5;
+                    }
+                }
+                
+                .credentials-container {
+                    position: relative;
+                    z-index: 3;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 0 2rem;
+                }
+                
+                .section-header {
+                    text-align: center;
+                    margin-bottom: 4rem;
+                }
+                
+                .section-badge {
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 184, 0, 0.1);
+                    color: #FFB800;
+                    border-radius: 50px;
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    margin-bottom: 1rem;
+                    border: 1px solid rgba(255, 184, 0, 0.2);
+                }
+                
+                .section-title {
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    margin-bottom: 1rem;
+                    background: linear-gradient(120deg, #fff 0%, #FFB800 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                
+                .section-subtitle {
+                    font-size: 1.1rem;
+                    color: rgba(255, 255, 255, 0.8);
+                    max-width: 800px;
+                    margin: 0 auto;
+                    line-height: 1.6;
+                }
+                
+                .credentials-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 2rem;
+                    margin-top: 3rem;
+                }
+                
+                .credential-card {
+                    background: rgba(255, 255, 255, 0.05);
+                    border-radius: 20px;
+                    padding: 2rem;
+                    transition: all 0.3s ease;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    backdrop-filter: blur(10px);
+                    position: relative;
+                    overflow: hidden;
+                    cursor: pointer;
+                }
+                
+                .credential-card::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(45deg, transparent, rgba(255, 184, 0, 0.1), transparent);
+                    transform: translateX(-100%);
+                    transition: transform 0.6s ease;
+                }
+                
+                .credential-card:hover::before {
+                    transform: translateX(100%);
+                }
+                
+                .credential-card:hover {
+                    transform: translateY(-5px) scale(1.02);
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                    border-color: rgba(255, 184, 0, 0.3);
+                }
+                
+                .credential-icon-wrapper {
+                    position: relative;
+                    width: 60px;
+                    height: 60px;
+                    margin-bottom: 1.5rem;
+                    transition: transform 0.3s ease;
+                }
+                
+                .credential-card:hover .credential-icon-wrapper {
+                    transform: scale(1.1) rotate(5deg);
+                }
+                
+                .credential-icon-bg {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(255, 184, 0, 0.1);
+                    border-radius: 15px;
+                    transform: rotate(45deg);
+                    transition: all 0.3s ease;
+                }
+                
+                .credential-card:hover .credential-icon-bg {
+                    background: rgba(255, 184, 0, 0.2);
+                    transform: rotate(60deg);
+                }
+                
+                .credential-icon {
+                    position: relative;
+                    z-index: 1;
+                    color: #FFB800;
+                    transition: all 0.3s ease;
+                }
+                
+                .credential-card:hover .credential-icon {
+                    color: #ffc526;
+                    transform: scale(1.1);
+                }
+                
+                .credential-stats {
+                    margin-bottom: 1rem;
+                    position: relative;
+                }
+                
+                .stats-number {
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: #FFB800;
+                    line-height: 1;
+                    display: inline-block;
+                    transition: all 0.3s ease;
+                }
+                
+                .credential-card:hover .stats-number {
+                    transform: scale(1.1);
+                    color: #ffc526;
+                }
+                
+                .stats-symbol {
+                    font-size: 1.5rem;
+                    color: #FFB800;
+                    margin-left: 0.25rem;
+                    transition: all 0.3s ease;
+                }
+                
+                .credential-card:hover .stats-symbol {
+                    color: #ffc526;
+                }
+                
+                .credential-title {
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    margin-bottom: 1rem;
+                    color: #fff;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    display: inline-block;
+                }
+                
+                .credential-title::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background: #FFB800;
+                    transition: width 0.3s ease;
+                }
+                
+                .credential-card:hover .credential-title::after {
+                    width: 100%;
+                }
+                
+                .credential-description {
+                    color: rgba(255, 255, 255, 0.8);
+                    line-height: 1.6;
+                    margin-bottom: 1.5rem;
+                    transition: all 0.3s ease;
+                }
+                
+                .credential-card:hover .credential-description {
+                    color: rgba(255, 255, 255, 0.9);
+                    transform: translateX(5px);
+                }
+                
+                .credential-highlight {
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 184, 0, 0.1);
+                    color: #FFB800;
+                    border-radius: 50px;
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    border: 1px solid rgba(255, 184, 0, 0.2);
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .credential-highlight::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient( 90deg, transparent, rgba(255, 184, 0, 0.2), transparent);
+                    transition: left 0.5s ease;
+                }
+                
+                .credential-card:hover .credential-highlight {
+                    background: rgba(255, 184, 0, 0.2);
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(255, 184, 0, 0.2);
+                }
+                
+                .credential-card:hover .credential-highlight::before {
+                    left: 100%;
+                }
+                /* Add animation for counter numbers */
+                
+                @keyframes countUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                .stats-number.animate {
+                    animation: countUp 1s ease-out forwards;
+                }
+                /* Add hover effect for section badge */
+                
+                .section-badge {
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 184, 0, 0.1);
+                    color: #FFB800;
+                    border-radius: 50px;
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    margin-bottom: 1rem;
+                    border: 1px solid rgba(255, 184, 0, 0.2);
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .section-badge:hover {
+                    background: rgba(255, 184, 0, 0.2);
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(255, 184, 0, 0.2);
+                }
+                /* Add hover effect for section title */
+                
+                .section-title {
+                    position: relative;
+                    display: inline-block;
+                }
+                
+                .section-title::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background: linear-gradient(90deg, #FFB800, transparent);
+                    transition: width 0.3s ease;
+                }
+                
+                .section-title:hover::after {
+                    width: 100%;
+                }
+                /* Add script for counter animation */
+                
+                <script>document.addEventListener('DOMContentLoaded', function() {
+                    const counters=document.querySelectorAll('.stats-number');
+                    const animateCounter=(counter)=> {
+                        const target=parseInt(counter.textContent);
+                        let count=0;
+                        const speed=2000 / target;
+                        const updateCount=()=> {
+                            if (count < target) {
+                                count++;
+                                counter.textContent=count;
+                                counter.classList.add('animate');
+                                setTimeout(updateCount, speed);
+                            }
+                        }
+                        ;
+                        updateCount();
+                    }
+                    ;
+                    // Intersection Observer for counter animation
+                    const observer=new IntersectionObserver((entries)=> {
+                        entries.forEach(entry=> {
+                            if (entry.isIntersecting) {
+                                animateCounter(entry.target);
+                                observer.unobserve(entry.target);
+                            }
+                        }
+                        );
+                    }
+                    , {
+                        threshold: 0.5
+                    }
+                    );
+                    counters.forEach(counter=> observer.observe(counter));
+                }
+                
+                );
+                </script>@media (max-width: 768px) {
+                    .credentials-section {
+                        padding: 4rem 0;
+                    }
+                    .section-title {
+                        font-size: 2rem;
+                    }
+                    .section-subtitle {
+                        font-size: 1rem;
+                    }
+                    .credential-card {
+                        padding: 1.5rem;
+                    }
+                    .stats-number {
+                        font-size: 2rem;
+                    }
+                }
+            </style>
+            <div class="credentials-container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-badge">Our Expertise</span>
+                    <h2 class="section-title">Setting the Gold Standard in English Education</h2>
+                    <p class="section-subtitle">Experience transformative learning with our elite team of language experts, trusted by professionals worldwide</p>
+                </div>
+
+                <div class="credentials-grid">
+                    <!-- Success Rate Card -->
+                    <div class="credential-card premium" data-aos="fade-up" data-aos-duration="800">
+                        <div class="credential-icon-wrapper">
+                            <div class="credential-icon-bg"></div>
+                            <svg class="credential-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <div class="credential-content">
+                            <div class="credential-stats">
+                                <span class="stats-number counter">98</span>
+                                <span class="stats-symbol">%</span>
+                            </div>
+                            <h3 class="credential-title">Success Rate</h3>
+                            <p class="credential-description">Unparalleled achievement rates in IELTS and TOEFL preparation, with our students consistently scoring in the top percentiles. Our data-driven approach combines cutting-edge teaching methods with personalized strategies for
+                                guaranteed results.</p>
+                            <div class="credential-highlight">Top 1% in Industry</div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Card -->
+                    <div class="credential-card premium" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                        <div class="credential-icon-wrapper">
+                            <div class="credential-icon-bg"></div>
+                            <svg class="credential-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                            </svg>
+                        </div>
+                        <div class="credential-content">
+                            <div class="credential-stats">
+                                <span class="stats-number counter">5</span>
+                                <span class="stats-symbol">+</span>
+                            </div>
+                            <h3 class="credential-title">Years of Excellence</h3>
+                            <p class="credential-description">Distinguished track record of excellence in premium language education. Our methodology has been refined through years of research, continuous innovation, and real-world success stories from executives, professionals, and academic
+                                achievers.
+                            </p>
+                            <div class="credential-highlight">Industry Expert</div>
+                        </div>
+                    </div>
+
+                    <!-- Students Card -->
+                    <div class="credential-card premium" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+                        <div class="credential-icon-wrapper">
+                            <div class="credential-icon-bg"></div>
+                            <svg class="credential-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                            </svg>
+                        </div>
+                        <div class="credential-content">
+                            <div class="credential-stats">
+                                <span class="stats-number counter">1000</span>
+                                <span class="stats-symbol">+</span>
+                            </div>
+                            <h3 class="credential-title">Global Students</h3>
+                            <p class="credential-description">Our diverse alumni network spans across 30+ countries, including Fortune 500 executives, distinguished academics, and industry leaders. We've cultivated a prestigious community of global achievers who've mastered English as
+                                their competitive advantage.</p>
+                            <div class="credential-highlight">Global Community</div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications Card -->
+                    <div class="credential-card premium" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+                        <div class="credential-icon-wrapper">
+                            <div class="credential-icon-bg"></div>
+                            <svg class="credential-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L2 9l10 7 10-7-10-7zm0 18l-10-7v2l10 7 10-7v-2l-10 7z"/>
+                            </svg>
+                        </div>
+                        <div class="credential-content">
+                            <div class="credential-stats">
+                                <span class="stats-number counter">4</span>
+                                <span class="stats-symbol">+</span>
+                            </div>
+                            <h3 class="credential-title">Elite Certifications</h3>
+                            <p class="credential-description">Beyond standard TEFL/TESOL certifications, our instructors hold advanced qualifications in neurolinguistic programming, cognitive learning strategies, and modern pedagogical frameworks. We combine traditional excellence with
+                                cutting-edge teaching innovations.</p>
+                            <div class="credential-highlight">Certified Excellence</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .credentials-section {
+                    background: var(--bg-primary);
+                    padding: 6rem 2rem;
+                    color: var(--text-primary);
+                }
+                
+                .section-header {
+                    text-align: center;
+                    margin-bottom: 4rem;
+                }
+                
+                .section-title {
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    margin: 1rem 0;
+                    color: var(--text-primary);
+                }
+                
+                .section-subtitle {
+                    font-size: 1.2rem;
+                    color: var(--text-secondary);
+                    max-width: 800px;
+                    margin: 0 auto;
+                }
+                
+                .credentials-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 2rem;
+                    max-width: 1400px;
+                    margin: 0 auto;
+                }
+                
+                .credential-card {
+                    background: var(--bg-secondary);
+                    border-radius: 16px;
+                    padding: 2rem;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+                
+                .credential-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+                }
+                
+                .credential-title {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    margin: 1rem 0;
+                    color: var(--text-primary);
+                }
+                
+                .credential-description {
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    color: var(--text-secondary);
+                    margin-bottom: 1.5rem;
+                }
+                
+                .credential-stats {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                }
+                
+                .counter {
+                    display: inline-block;
+                    animation: countUp 2s ease-out forwards;
+                }
+                
+                @keyframes countUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                .credential-highlight {
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: var(--primary-color);
+                    color: white;
+                    border-radius: 20px;
+                    font-weight: 500;
+                    font-size: 0.9rem;
+                }
+            </style>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Counter animation
+                    const counters = document.querySelectorAll('.counter');
+
+                    const animateCounter = (counter) => {
+                        const target = parseInt(counter.textContent);
+                        let count = 0;
+                        const speed = 2000 / target;
+
+                        const updateCount = () => {
+                            if (count < target) {
+                                count++;
+                                counter.textContent = count;
+                                setTimeout(updateCount, speed);
+                            }
+                        };
+
+                        updateCount();
+                    };
+
+                    // Intersection Observer for counter animation
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                animateCounter(entry.target);
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, {
+                        threshold: 0.5
+                    });
+
+                    counters.forEach(counter => observer.observe(counter));
+
+                    // Save state to localStorage
+                    localStorage.setItem('credentialsSection', document.querySelector('.credentials-section').innerHTML);
                 });
-        });
+            </script>
+            </script>
+        </section>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="testimonials-container">
+                <div class="section-header">
+                    <h2 class="section-title">What Our Students Say</h2>
+                    <p class="section-subtitle">Real stories from our global community of English learners</p>
+                </div>
+
+                <div class="testimonials-grid" id="testimonialsGrid">
+                    <!-- Testimonial 1 - Dmitry -->
+                    <div class="testimonial-card" data-aos="fade-up">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar-wrapper">
+                                <svg class="testimonial-avatar-svg" viewBox="0 0 80 80">
+                                    <circle cx="40" cy="40" r="38" fill="#E3F2FD"/>
+                                    <circle cx="40" cy="35" r="18" fill="#2196F3"/>
+                                    <path d="M40 60c12 0 22 4 22 10H18c0-6 10-10 22-10z" fill="#2196F3"/>
+                                </svg>
+                                <div class="avatar-badge" title="Recent Student">🌟</div>
+                            </div>
+                            <div class="testimonial-meta">
+                                <h3 class="testimonial-name">Dmitry Artyukov</h3>
+                                <p class="testimonial-location">
+                                    <svg class="location-icon" viewBox="0 0 24 24" width="16" height="16">
+                                        <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                    </svg> Russia
+                                </p>
+                                <div class="testimonial-rating" data-rating="5">
+                                    <div class="stars-outer">
+                                        <div class="stars-inner"></div>
+                                    </div>
+                                </div>
+                                <span class="date">Feb 10, 2024</span>
+                            </div>
+                        </div>
+                        <blockquote class="testimonial-quote">
+                            <svg class="quote-icon" viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="currentColor" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                            </svg> John is the best English teacher I have ever met! Thank you very much!
+                        </blockquote>
+                        <div class="testimonial-achievement">
+                            <div class="achievement-icon">🎯</div>
+                            <span>Personalized Learning | Quick Progress</span>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 - Maryam -->
+                    <div class="testimonial-card featured" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar-wrapper">
+                                <svg class="testimonial-avatar-svg" viewBox="0 0 80 80">
+                                    <circle cx="40" cy="40" r="38" fill="#F8BBD0"/>
+                                    <circle cx="40" cy="35" r="18" fill="#E91E63"/>
+                                    <path d="M40 60c12 0 22 4 22 10H18c0-6 10-10 22-10z" fill="#E91E63"/>
+                                </svg>
+                                <div class="avatar-badge" title="Professional Development">📚</div>
+                            </div>
+                            <div class="testimonial-meta">
+                                <h3 class="testimonial-name">Maryam Zarei</h3>
+                                <p class="testimonial-location">
+                                    <svg class="location-icon" viewBox="0 0 24 24" width="16" height="16">
+                                        <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                    </svg> Iran
+                                </p>
+                                <div class="testimonial-rating" data-rating="5">
+                                    <div class="stars-outer">
+                                        <div class="stars-inner"></div>
+                                    </div>
+                                </div>
+                                <span class="date">Dec 31, 2023</span>
+                            </div>
+                        </div>
+                        <blockquote class="testimonial-quote">
+                            <svg class="quote-icon" viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="currentColor" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                            </svg> John is a professional teacher who truly understands your needs. He customizes the training materials to align with your goals, ensuring effective learning.
+                        </blockquote>
+                        <div class="testimonial-achievement">
+                            <div class="achievement-icon">🎓</div>
+                            <span>Customized Learning | Professional Growth</span>
+                        </div>
+                        <div class="testimonial-skills">
+                            <span class="skill-tag">Personalized Materials</span>
+                            <span class="skill-tag">Goal-Oriented</span>
+                            <span class="skill-tag">Professional English</span>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 - Karolina -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar-wrapper">
+                                <svg class="testimonial-avatar-svg" viewBox="0 0 80 80">
+                                    <circle cx="40" cy="40" r="38" fill="#C8E6C9"/>
+                                    <circle cx="40" cy="35" r="18" fill="#4CAF50"/>
+                                    <path d="M40 60c12 0 22 4 22 10H18c0-6 10-10 22-10z" fill="#4CAF50"/>
+                                </svg>
+                                <div class="avatar-badge" title="Speaking Expert">🗣️</div>
+                            </div>
+                            <div class="testimonial-meta">
+                                <h3 class="testimonial-name">Karolina</h3>
+                                <p class="testimonial-location">
+                                    <svg class="location-icon" viewBox="0 0 24 24" width="16" height="16">
+                                        <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                    </svg> Poland
+                                </p>
+                                <div class="testimonial-rating" data-rating="5">
+                                    <div class="stars-outer">
+                                        <div class="stars-inner"></div>
+                                    </div>
+                                </div>
+                                <span class="date">Oct 15, 2023</span>
+                            </div>
+                        </div>
+                        <blockquote class="testimonial-quote">
+                            <svg class="quote-icon" viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="currentColor" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                            </svg> My main goal is to improve my speaking and John is the right choice - I have regular lessons with him and I'm really improving and also enjoying the lessons. We talk about everything and I
+                            get instant feedback so I don't repeat mistakes. Definitely recommend.
+                        </blockquote>
+                        <div class="testimonial-achievement">
+                            <div class="achievement-icon">💬</div>
+                            <span>Speaking Mastery | Continuous Improvement</span>
+                        </div>
+                        <div class="testimonial-progress">
+                            <div class="progress-label">Speaking Confidence</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 - David -->
+                    <div class="testimonial-card featured" data-aos="fade-up" data-aos-delay="300">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar-wrapper">
+                                <svg class="testimonial-avatar-svg" viewBox="0 0 80 80">
+                                    <circle cx="40" cy="40" r="38" fill="#FFE0B2"/>
+                                    <circle cx="40" cy="35" r="18" fill="#FF9800"/>
+                                    <path d="M40 60c12 0 22 4 22 10H18c0-6 10-10 22-10z" fill="#FF9800"/>
+                                </svg>
+                                <div class="avatar-badge" title="Structured Learning">📊</div>
+                            </div>
+                            <div class="testimonial-meta">
+                                <h3 class="testimonial-name">David Kasparek</h3>
+                                <p class="testimonial-location">
+                                    <svg class="location-icon" viewBox="0 0 24 24" width="16" height="16">
+                                        <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                    </svg> Czech Republic
+                                </p>
+                                <div class="testimonial-rating" data-rating="5">
+                                    <div class="stars-outer">
+                                        <div class="stars-inner"></div>
+                                    </div>
+                                </div>
+                                <span class="date">Sept 20, 2023</span>
+                            </div>
+                        </div>
+                        <blockquote class="testimonial-quote">
+                            <svg class="quote-icon" viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="currentColor" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                            </svg> I really appreciate John's focus on student's needs and detailed feedback and tips he provides. Lessons are structured precisely according to targets we set on the first lecture. After each
+                            lesson, I get PDF materials with a summary of my mistakes and tips on how to improve my language skills. It is very very useful.
+                        </blockquote>
+                        <div class="testimonial-achievement">
+                            <div class="achievement-icon">📈</div>
+                            <span>Structured Learning | Detailed Feedback</span>
+                        </div>
+                        <div class="testimonial-skills">
+                            <span class="skill-tag">Personalized Feedback</span>
+                            <span class="skill-tag">Structured Learning</span>
+                            <span class="skill-tag">PDF Materials</span>
+                        </div>
+                    </div>
+
+                    <!-- Additional testimonials will be hidden initially -->
+                    <div class="testimonial-card hidden" data-aos="fade-up" data-aos-delay="400">
+                        <!-- Continue with other testimonials following the same pattern -->
+                        <!-- Each additional testimonial should use the same structure but with unique colors and badges -->
+                    </div>
+                </div>
+
+                <!-- Show More/Less Controls -->
+                <div class="testimonials-controls">
+                    <button id="showMoreTestimonials" class="control-btn">
+                        <span class="btn-text">Show More Reviews</span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="testimonials-stats">
+                    <div class="stat-item">
+                        <div class="stat-value" data-count="1000">0</div>
+                        <div class="stat-label">Happy Students</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" data-count="98">0</div>
+                        <div class="stat-label">Success Rate %</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" data-count="30">0</div>
+                        <div class="stat-label">Countries</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Journey Section -->
+        <section class="learning-journey">
+            <style>
+                .learning-journey {
+                    padding: 6rem 2rem;
+                    background: var(--bg-secondary);
+                }
+                
+                .journey-container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+                
+                .journey-timeline {
+                    position: relative;
+                    padding: 2rem 0;
+                }
+                
+                .journey-step {
+                    display: flex;
+                    gap: 2rem;
+                    margin-bottom: 3rem;
+                    opacity: 0;
+                    transform: translateY(20px);
+                    animation: fadeInUp 0.6s ease-out forwards;
+                }
+                
+                .journey-step:last-child {
+                    margin-bottom: 0;
+                }
+                
+                .journey-marker {
+                    position: relative;
+                    flex-shrink: 0;
+                }
+                
+                .marker-icon {
+                    width: 48px;
+                    height: 48px;
+                    background: var(--primary-color);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    position: relative;
+                    z-index: 2;
+                }
+                
+                .marker-line {
+                    position: absolute;
+                    top: 48px;
+                    left: 24px;
+                    width: 2px;
+                    height: calc(100% + 3rem);
+                    background: var(--primary-color);
+                    opacity: 0.3;
+                }
+                
+                .journey-step:last-child .marker-line {
+                    display: none;
+                }
+                
+                .journey-content {
+                    flex: 1;
+                    background: var(--bg-primary);
+                    border-radius: 12px;
+                    padding: 2rem;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+                
+                .journey-content h3 {
+                    color: var(--text-primary);
+                    margin-bottom: 1rem;
+                    font-size: 1.5rem;
+                }
+                
+                .journey-content p {
+                    color: var(--text-secondary);
+                    margin-bottom: 1.5rem;
+                }
+                
+                .journey-features {
+                    list-style: none;
+                    padding: 0;
+                }
+                
+                .journey-features li {
+                    color: var(--text-secondary);
+                    margin-bottom: 0.5rem;
+                    padding-left: 1.5rem;
+                    position: relative;
+                }
+                
+                .journey-features li:before {
+                    content: "•";
+                    color: var(--primary-color);
+                    position: absolute;
+                    left: 0;
+                }
+                
+                .achievement-features {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+                
+                .achievement-feature {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.75rem;
+                }
+                
+                .achievement-feature-icon {
+                    color: var(--primary-color);
+                    font-weight: bold;
+                }
+                
+                .achievement-feature-text {
+                    color: var(--text-secondary);
+                }
+                
+                @keyframes fadeInUp {
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                @media (max-width: 768px) {
+                    .journey-step {
+                        flex-direction: column;
+                        gap: 1rem;
+                    }
+                    .marker-line {
+                        left: 24px;
+                    }
+                    .journey-content {
+                        padding: 1.5rem;
+                    }
+                }
+            </style>
+
+            <div class="section-header">
+                <h2 class="section-title">Your Learning Journey</h2>
+                <p class="section-subtitle">Discover your path to English fluency through our structured learning approach</p>
+            </div>
+
+            <div class="journey-container">
+                <div class="journey-timeline">
+                    <!-- Journey Step 1 -->
+                    <div class="journey-step" data-step="1">
+                        <div class="journey-marker">
+                            <div class="marker-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                                </svg>
+                            </div>
+                            <div class="marker-line"></div>
+                        </div>
+                        <div class="journey-content">
+                            <h3>Initial Assessment</h3>
+                            <p>Comprehensive evaluation of your current English level and specific needs</p>
+                            <ul class="journey-features">
+                                <li>Speaking proficiency test</li>
+                                <li>Learning style assessment</li>
+                                <li>Goal setting consultation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Journey Step 2 -->
+                    <div class="journey-step" data-step="2">
+                        <div class="journey-marker">
+                            <div class="marker-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                            </div>
+                            <div class="marker-line"></div>
+                        </div>
+                        <div class="journey-content">
+                            <h3>Personalized Learning Plan</h3>
+                            <p>Custom-tailored curriculum designed to match your goals and learning pace</p>
+                            <ul class="journey-features">
+                                <li>Structured learning path</li>
+                                <li>Progress milestones</li>
+                                <li>Adaptive learning materials</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Journey Step 3 -->
+                    <div class="journey-step" data-step="3">
+                        <div class="journey-marker">
+                            <div class="marker-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1 14H4V6h16v12z"/>
+                                </svg>
+                            </div>
+                            <div class="marker-line"></div>
+                        </div>
+                        <div class="journey-content">
+                            <h3>Interactive Sessions</h3>
+                            <p>Engaging one-on-one lessons focused on practical communication skills</p>
+                            <ul class="journey-features">
+                                <li>Real-world conversations</li>
+                                <li>Pronunciation coaching</li>
+                                <li>Instant feedback</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Journey Step 4 -->
+                    <div class="journey-step" data-step="4">
+                        <div class="journey-marker">
+                            <div class="marker-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                                </svg>
+                            </div>
+                            <div class="marker-line"></div>
+                        </div>
+                        <div class="journey-content">
+                            <h3>Progress Tracking</h3>
+                            <p>Regular assessments and detailed progress reports to monitor your improvement</p>
+                            <ul class="journey-features">
+                                <li>Skill level tracking</li>
+                                <li>Achievement certificates</li>
+                                <li>Performance analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Journey Step 5 -->
+                    <div class="journey-step" data-step="5">
+                        <div class="journey-marker">
+                            <div class="marker-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="journey-content">
+                            <h3 class="achievement-title">Fluency Achievement</h3>
+                            <p class="achievement-description">Reach your desired level of English proficiency with confidence</p>
+                            <div class="achievement-features">
+                                <div class="achievement-feature" data-aos="fade-right" data-aos-delay="100">
+                                    <div class="achievement-feature-icon">
+                                        <svg viewBox="0 0 24 24" width="24" height="24">
+                                            <path class="icon-path" d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7z"/>
+                                            <circle class="icon-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    <div class="achievement-feature-content">
+                                        <span class="achievement-feature-title">Fluent Communication</span>
+                                        <span class="achievement-feature-description">Master natural conversation flow and expression</span>
+                                    </div>
+                                </div>
+
+                                <div class="achievement-feature" data-aos="fade-right" data-aos-delay="200">
+                                    <div class="achievement-feature-icon">
+                                        <svg viewBox="0 0 24 24" width="24" height="24">
+                                            <path class="icon-path" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                                            <path class="icon-path" d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="achievement-feature-content">
+                                        <span class="achievement-feature-title">Cultural Understanding</span>
+                                        <span class="achievement-feature-description">Gain insights into global perspectives and customs</span>
+                                    </div>
+                                </div>
+
+                                <div class="achievement-feature" data-aos="fade-right" data-aos-delay="300">
+                                    <div class="achievement-feature-icon">
+                                        <svg viewBox="0 0 24 24" width="24" height="24">
+                                            <path class="icon-path" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                                            <path class="icon-path" d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="achievement-feature-content">
+                                        <span class="achievement-feature-title">Ongoing Support</span>
+                                        <span class="achievement-feature-description">Continuous guidance throughout your learning journey</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const steps = document.querySelectorAll('.journey-step');
+
+                const observerOptions = {
+                    threshold: 0.2,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                steps.forEach(step => {
+                    step.style.opacity = '0';
+                    observer.observe(step);
+                });
+            });
+        </script>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <!-- Company Info -->
+                    <div class="footer-column">
+                        <div class="footer-logo">
+                            <img src="https://cdn.jsdelivr.net/gh/Johnwalk12/Fluent-Speaker@main/src/assets/images/logo.png" alt="Fluent Speaker Logo" width="120" height="40">
+                        </div>
+                        <p class="footer-description">Transform your English journey with personalized coaching and expert guidance. Join our global community of successful learners.</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/fluentspeaker" class="social-link" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24" width="20" height="20">
+                                    <path fill="currentColor" d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5h-4.33C10.24.5,9.5,3.44,9.5,5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4Z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/fluentspeaker" class="social-link" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" width="20" height="20">
+                                    <path fill="currentColor" d="M12,2.16c3.2,0,3.58,0,4.85.07,3.25.15,4.77,1.69,4.92,4.92.06,1.27.07,1.65.07,4.85s0,3.58-.07,4.85c-.15,3.23-1.69,4.77-4.92,4.92-1.27.06-1.65.07-4.85.07s-3.58,0-4.85-.07c-3.25-.15-4.77-1.69-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s0-3.58.07-4.85C2.38,3.92,3.92,2.38,7.15,2.23,8.42,2.18,8.8,2.16,12,2.16ZM12,0C8.74,0,8.33,0,7.05.07c-4.35.2-6.78,2.62-6.98,6.98C0,8.33,0,8.74,0,12s0,3.67.07,4.95c.2,4.36,2.62,6.78,6.98,6.98C8.33,24,8.74,24,12,24s3.67,0,4.95-.07c4.35-.2,6.78-2.62,6.98-6.98C24,15.67,24,15.26,24,12s0-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67,0,15.26,0,12,0Zm0,5.84A6.16,6.16,0,1,0,18.16,12,6.16,6.16,0,0,0,12,5.84ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16ZM18.41,4.15a1.44,1.44,0,1,0,1.44,1.44A1.44,1.44,0,0,0,18.41,4.15Z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/company/fluentspeaker" class="social-link" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" width="20" height="20">
+                                    <path fill="currentColor" d="M20.45,20.45H17.56V14.88c0-1.08,0-2.47-1.5-2.47s-1.75,1.17-1.75,2.39v5.65H11.25V9h3.33v1.28h.05a3.06,3.06,0,0,1,2.75-1.51c2.94,0,3.48,1.93,3.48,4.44v6.24ZM7.51,8.2a1.77,1.77,0,1,1,0-3.54,1.77,1.77,0,0,1,0,3.54ZM8.2,20.45H4.56V9H8.2V20.45Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/courses">Our Courses</a></li>
+                            <li><a href="/tutors">Our Tutors</a></li>
+                            <li><a href="/pricing">Pricing</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Support</h3>
+                        <ul class="footer-links">
+                            <li><a href="/faq">FAQ</a></li>
+                            <li><a href="/help">Help Center</a></li>
+                            <li><a href="/terms">Terms of Service</a></li>
+                            <li><a href="/privacy">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Stay Updated</h3>
+                        <p class="footer-description">Subscribe to our newsletter for the latest updates, learning tips, and special offers.</p>
+                        <form class="newsletter-form" action="https://formsubmit.co/johnwalker199777@gmail.com" method="POST">
+                            <div class="newsletter-input-group">
+                                <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                                <button type="submit" class="newsletter-button">
+                                    <span>Subscribe</span>
+                                    <svg viewBox="0 0 24 24" width="16" height="16">
+                                        <path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="footer-bottom-content">
+                        <p>&copy; 2024 Fluent Speaker. All rights reserved.</p>
+                        <div class="footer-bottom-links">
+                            <a href="/privacy">Privacy Policy</a>
+                            <span class="separator">•</span>
+                            <a href="/terms">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <style>
+            .footer {
+                background: linear-gradient(to right, #1a1a1a, #2d2d2d);
+                color: #fff;
+                padding: 4rem 0 2rem;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .footer::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+            }
+            
+            .footer-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+            
+            .footer-grid {
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr 1.5fr;
+                gap: 3rem;
+                margin-bottom: 3rem;
+            }
+            
+            .footer-column {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .footer-logo img {
+                height: 40px;
+                width: auto;
+                filter: brightness(0) invert(1);
+            }
+            
+            .footer-description {
+                color: rgba(255, 255, 255, 0.7);
+                line-height: 1.6;
+                font-size: 0.95rem;
+            }
+            
+            .social-links {
+                display: flex;
+                gap: 1rem;
+            }
+            
+            .social-link {
+                color: rgba(255, 255, 255, 0.7);
+                transition: all 0.3s ease;
+                padding: 0.5rem;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .social-link:hover {
+                color: #fff;
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateY(-2px);
+            }
+            
+            .footer-heading {
+                color: #fff;
+                font-size: 1.1rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                position: relative;
+                padding-bottom: 0.5rem;
+            }
+            
+            .footer-heading::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 2rem;
+                height: 2px;
+                background: linear-gradient(to right, #FFB800, transparent);
+            }
+            
+            .footer-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .footer-links li {
+                margin-bottom: 0.75rem;
+            }
+            
+            .footer-links a {
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none;
+                transition: all 0.3s ease;
+                display: inline-block;
+                position: relative;
+            }
+            
+            .footer-links a:hover {
+                color: #fff;
+                transform: translateX(5px);
+            }
+            
+            .newsletter-form {
+                margin-top: 1rem;
+            }
+            
+            .newsletter-input-group {
+                display: flex;
+                gap: 0.5rem;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                padding: 0.5rem;
+            }
+            
+            .newsletter-input {
+                flex: 1;
+                background: transparent;
+                border: none;
+                color: #fff;
+                padding: 0.5rem;
+                font-size: 0.95rem;
+            }
+            
+            .newsletter-input::placeholder {
+                color: rgba(255, 255, 255, 0.5);
+            }
+            
+            .newsletter-button {
+                background: #FFB800;
+                color: #000;
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 6px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+            
+            .newsletter-button:hover {
+                background: #ffc526;
+                transform: translateY(-2px);
+            }
+            
+            .footer-bottom {
+                padding-top: 2rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .footer-bottom-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 0.9rem;
+            }
+            
+            .footer-bottom-links {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+            }
+            
+            .footer-bottom-links a {
+                color: rgba(255, 255, 255, 0.5);
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            
+            .footer-bottom-links a:hover {
+                color: #fff;
+            }
+            
+            .separator {
+                color: rgba(255, 255, 255, 0.3);
+            }
+            
+            @media (max-width: 1024px) {
+                .footer-grid {
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2rem;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .footer {
+                    padding: 3rem 0 1.5rem;
+                }
+                .footer-grid {
+                    grid-template-columns: 1fr;
+                }
+                .footer-bottom-content {
+                    flex-direction: column;
+                    gap: 1rem;
+                    text-align: center;
+                }
+                .footer-bottom-links {
+                    justify-content: center;
+                }
+                .newsletter-input-group {
+                    flex-direction: column;
+                }
+                .newsletter-button {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        </style>
+
+        <!-- Notification System -->
+        <div class="notification-container" id="notificationContainer"></div>
+
+        <!-- Scripts -->
+        <script>
+            // Inline performance optimization
+            document.addEventListener('DOMContentLoaded', () => {
+                // Remove loading overlay
+                document.querySelector('.loading-overlay').classList.add('hidden');
+
+                // Lazy load images
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                if ('loading' in HTMLImageElement.prototype) {
+                    images.forEach(img => {
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                        }
+                    });
+                } else {
+                    // Fallback for browsers that don't support lazy loading
+                    const script = document.createElement('script');
+                    script.src = 'https://cdn.jsdelivr.net/gh/Johnwalk12/Fluent-Speaker@main/src/scripts/lazysizes.min.js';
+                    document.body.appendChild(script);
+                }
+            });
+
+            // Initialize AOS with enhanced options
+            document.addEventListener('DOMContentLoaded', () => {
+                AOS.init({
+                    duration: 1000,
+                    offset: 100,
+                    once: true,
+                    mirror: true,
+                    anchorPlacement: 'top-bottom'
+                });
+
+                // Enhanced star rating animation
+                document.querySelectorAll('.testimonial-rating').forEach(rating => {
+                    const value = parseInt(rating.dataset.rating);
+                    const starsInner = rating.querySelector('.stars-inner');
+                    starsInner.style.width = `${(value / 5) * 100}%`;
+                });
+
+                // Enhanced progress bar animation
+                const progressObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.width = entry.target.dataset.width || '95%';
+                            entry.target.style.opacity = 1;
+                        }
+                    });
+                }, {
+                    threshold: 0.5
+                });
+
+                document.querySelectorAll('.progress-fill, .score-fill').forEach(bar => {
+                    bar.style.opacity = 0;
+                    progressObserver.observe(bar);
+                });
+
+                // Add hover effect to testimonial cards
+                document.querySelectorAll('.testimonial-card').forEach(card => {
+                    card.addEventListener('mousemove', (e) => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+
+                        const rotateX = (y - centerY) / 20;
+                        const rotateY = (centerX - x) / 20;
+
+                        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                    });
+                });
+            });
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const showMoreBtn = document.getElementById('showMoreTestimonials');
+                const testimonialsGrid = document.querySelector('.testimonials-grid');
+                let isExpanded = false;
+
+                showMoreBtn.addEventListener('click', () => {
+                    isExpanded = !isExpanded;
+                    testimonialsGrid.classList.toggle('show-all');
+                    showMoreBtn.classList.toggle('active');
+                    showMoreBtn.querySelector('.btn-text').textContent =
+                        isExpanded ? 'Show Less Reviews' : 'Show More Reviews';
+                });
+
+                // Animate statistics
+                const stats = document.querySelectorAll('.stat-value');
+
+                const animateStats = () => {
+                    stats.forEach(stat => {
+                        const target = parseInt(stat.getAttribute('data-count'));
+                        const duration = 2000;
+                        const step = target / (duration / 16);
+                        let current = 0;
+
+                        const updateValue = () => {
+                            if (current < target) {
+                                current = Math.min(current + step, target);
+                                stat.textContent = Math.round(current);
+                                requestAnimationFrame(updateValue);
+                            } else {
+                                stat.textContent = target;
+                            }
+                        };
+
+                        updateValue();
+                    });
+                };
+
+                // Animate stats when they come into view
+                const statsObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateStats();
+                            statsObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.5
+                });
+
+                document.querySelector('.testimonials-stats').forEach(stats => {
+                    statsObserver.observe(stats);
+                });
+
+                // Enhanced card animations
+                const cards = document.querySelectorAll('.testimonial-card');
+                cards.forEach((card, index) => {
+                    card.style.animationDelay = `${index * 0.1}s`;
+                });
+            });
+        </script>
+
+        <script>
+            // Enhanced Testimonials Functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                // Initialize AOS with custom settings
+                AOS.init({
+                    duration: 800,
+                    offset: 100,
+                    once: true,
+                    mirror: false,
+                    anchorPlacement: 'top-bottom'
+                });
+
+                // Enhanced Star Rating Animation
+                function initializeStarRatings() {
+                    const ratings = document.querySelectorAll('.testimonial-rating');
+                    ratings.forEach(rating => {
+                        const value = parseFloat(rating.dataset.rating);
+                        const starsInner = rating.querySelector('.stars-inner');
+
+                        // Animate the width
+                        starsInner.style.width = '0%';
+                        setTimeout(() => {
+                            starsInner.style.width = `${(value / 5) * 100}%`;
+                            starsInner.style.transition = 'width 1.5s ease-out';
+                        }, 200);
+                    });
+                }
+
+                // Enhanced Show More/Less functionality with smooth transitions
+                function initializeShowMore() {
+                    const grid = document.getElementById('testimonialsGrid');
+                    const btn = document.getElementById('showMoreTestimonials');
+                    const hiddenCards = document.querySelectorAll('.testimonial-card.hidden');
+                    let isExpanded = false;
+
+                    if (btn && hiddenCards.length > 0) {
+                        btn.addEventListener('click', () => {
+                            const text = btn.querySelector('.btn-text');
+                            const icon = btn.querySelector('.btn-icon');
+
+                            if (!isExpanded) {
+                                // Show more with staggered animation
+                                hiddenCards.forEach((card, index) => {
+                                    setTimeout(() => {
+                                        card.classList.remove('hidden');
+                                        card.style.opacity = '0';
+                                        card.style.transform = 'translateY(20px)';
+                                        card.style.display = 'block';
+
+                                        requestAnimationFrame(() => {
+                                            card.style.opacity = '1';
+                                            card.style.transform = 'translateY(0)';
+                                            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                                        });
+                                    }, index * 100);
+                                });
+
+                                text.textContent = 'Show Less';
+                                icon.style.transform = 'rotate(180deg)';
+                            } else {
+                                // Show less with fade out animation
+                                hiddenCards.forEach(card => {
+                                    card.style.opacity = '0';
+                                    card.style.transform = 'translateY(20px)';
+
+                                    card.addEventListener('transitionend', function handler() {
+                                        card.style.display = 'none';
+                                        card.classList.add('hidden');
+                                        card.removeEventListener('transitionend', handler);
+                                    });
+                                });
+
+                                text.textContent = 'Show More Reviews';
+                                icon.style.transform = 'rotate(0deg)';
+                            }
+
+                            isExpanded = !isExpanded;
+                        });
+                    }
+                }
+
+                // Enhanced Statistics Animation with easing
+                function initializeStats() {
+                    const stats = document.querySelectorAll('.stat-value');
+
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                animateValue(entry.target);
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, {
+                        threshold: 0.5,
+                        rootMargin: '0px'
+                    });
+
+                    stats.forEach(stat => observer.observe(stat));
+                }
+
+                function easeOutQuart(x) {
+                    return 1 - Math.pow(1 - x, 4);
+                }
+
+                function animateValue(element) {
+                    const end = parseInt(element.dataset.count);
+                    const duration = 2000;
+                    const start = 0;
+                    let startTime = null;
+
+                    function update(currentTime) {
+                        if (!startTime) startTime = currentTime;
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+
+                        const easedProgress = easeOutQuart(progress);
+                        const current = Math.round(easedProgress * end);
+                        element.textContent = current;
+
+                        if (progress < 1) {
+                            requestAnimationFrame(update);
+                        }
+                    }
+
+                    requestAnimationFrame(update);
+                }
+
+                // Progress Bar Animation
+                function initializeProgressBars() {
+                    const progressBars = document.querySelectorAll('.progress-fill');
+
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const bar = entry.target;
+                                const width = bar.style.width;
+                                bar.style.width = '0';
+
+                                requestAnimationFrame(() => {
+                                    bar.style.width = width;
+                                    bar.style.transition = 'width 1.5s cubic-bezier(0.4, 0, 0.2, 1)';
+                                });
+
+                                observer.unobserve(bar);
+                            }
+                        });
+                    }, {
+                        threshold: 0.5
+                    });
+
+                    progressBars.forEach(bar => observer.observe(bar));
+                }
+
+                // Skill Tags Animation
+                function initializeSkillTags() {
+                    const skillTags = document.querySelectorAll('.skill-tag');
+
+                    skillTags.forEach(tag => {
+                        tag.addEventListener('mouseover', () => {
+                            tag.style.transform = 'scale(1.05)';
+                            tag.style.transition = 'all 0.3s ease';
+                        });
+
+                        tag.addEventListener('mouseout', () => {
+                            tag.style.transform = 'scale(1)';
+                        });
+                    });
+                }
+
+                // Initialize all functionality
+                initializeStarRatings();
+                initializeShowMore();
+                initializeStats();
+                initializeProgressBars();
+                initializeSkillTags();
+
+                // Reinitialize on dynamic content changes
+                document.addEventListener('contentChanged', () => {
+                    initializeStarRatings();
+                    initializeShowMore();
+                    initializeStats();
+                    initializeProgressBars();
+                    initializeSkillTags();
+                });
+            });
+        </script>
+    </main>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { initializeContent } from '../js/content-loader.js'; // Initialize content when DOM is loaded document.addEventListener('DOMContentLoaded', () => { initializeContent(); });
     </script>
-
-    <!-- Add your JavaScript file reference here -->
-    <script src="https://cdn.jsdelivr.net/gh/Johnwalk12/Fluent-Speaker@latest/src/js/components/testimonials.js" defer></script>
-
 </body>
 
 </html>
